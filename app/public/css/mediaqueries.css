@@ -1,0 +1,269 @@
+/*  MEDIA QUERIES 900PX */
+
+@media screen and (max-width: 900px) {
+  
+  /* FLEX */
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+  }
+  nav {
+    display: flex;
+  }
+  main {
+    display: flex;
+  }
+  footer {
+    display: flex;
+  }
+
+  
+  /* HEADER */
+  .header {
+    width: 100%;
+  }
+  .header-img {
+    width: 9em;
+    height: 9em;
+  }
+  .header-h1 {
+    font-size: 5em;
+  }
+  .header-button {
+    font-size: 1.1em;
+    margin: 0.4em;
+  }
+
+  /* NAV */
+
+  .nav {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0.5em;
+    width: 100%;
+    gap: 0em;
+  }
+  .nav-a {
+    font-size: 1.8em;
+  }
+  
+  /* MAIN */
+
+  main {
+    height: 100%;
+  }
+
+  .accueil-div {
+    font-size: 1.7em;
+  }
+  .contact-div {
+    font-size: 1.5em;
+    height: 45%;
+  }
+  .mentions-div {
+    font-size: 1.5em;
+  }
+  .Page404-div {
+    font-size: 1.5em;
+  }
+  .signup-div {
+    font-size: 1.5em;
+  }
+  .transports-div {
+    font-size: 1.5em;
+  }
+  .vehicules {
+    border: solid rgb(29, 135, 228) 0.3em;
+  }
+
+
+  /* FOOTER */
+
+  .footer {
+    align-items: center;
+    justify-content: center;
+    padding: 0.3em;
+    width: 100%;
+  }
+  .footer-button {
+    font-size: 1.1em;
+  }
+
+}
+
+/*  MEDIA QUERIES 700PX */
+
+@media screen and (max-width: 700px) {
+  
+  /* HEADER */
+  .header-img {
+    width: 7em;
+    height: 7em;
+  }
+  .header-h1 {
+    font-size: 4em;
+  }
+  .header-button {
+    font-size: 0.9em;
+    margin: 0.3em;
+  }
+
+  /* NAV */
+  .nav-a {
+    font-size: 1.5em;
+  }
+
+  /* MAIN */
+  .accueil-div {
+    font-size: 1.5em;
+  }
+  .contact {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .contact-div {
+    justify-content: center;
+    font-size: 1.1em;
+    height: 45%;
+    width: 70%;
+  }
+  .mentions-div {
+    font-size: 1.3em;
+  }
+  .Page404-div {
+    font-size: 1.3em;
+  }
+  .signup-div {
+    font-size: 1.1em;
+    height: 70%;
+  }
+  .transports-div {
+    font-size: 1.3em;
+  }
+  
+  /* FOOTER */
+  .footer-button {
+    font-size: 0.9em;
+  }
+
+}
+
+/*  MEDIA QUERIES 500PX */
+
+@media screen and (max-width: 500px) {
+  
+  /* HEADER */
+  .header-img {
+    width: 5em;
+    height: 5em;
+  }
+  .header-h1 {
+    font-size: 3em;
+  }
+  .header-button {
+    font-size: 0.7em;
+    margin: 0.2em;
+  }
+
+  /* NAV */
+  .nav-a {
+    font-size: 1em;
+  }
+
+  /* MAIN */
+  .accueil-div {
+    font-size: 1.3em;
+  }
+  .contact-div {
+    font-size: 0.9em;
+    width: 90%;
+  }
+  .mentions-div {
+    font-size: 1.1em;
+  }
+  .Page404-div {
+    font-size: 1.1em;
+  }
+  .signup-div {
+    font-size: 0.9em;
+    width: 70%;
+    height: 55%;
+  }
+  .transports-div {
+    font-size: 1em;
+  }
+  .vehicules {
+    height: 100%;
+  }
+  .vehicules-div {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+  }
+  .vehicules-div-img {
+    width: 100%;
+    height: 50%;
+  }
+  
+  /* FOOTER */
+  .footer-button {
+    font-size: 0.7em;
+  }
+
+}
+
+/*  MEDIA QUERIES 300PX */
+
+@media screen and (max-width: 300px) {
+  
+  /* HEADER */
+  .header-img {
+    width: 3em;
+    height: 3em;
+  }
+  .header-h1 {
+    font-size: 2em;
+  }
+  .header-button {
+    font-size: 0.5em;
+    margin: 0.1em;
+  }
+
+  /* NAV */
+  .nav-a {
+    font-size: 0.8em;
+  }
+
+  /* MAIN */
+  .accueil-div {
+    font-size: 0.9em;
+  }
+  .contact-div {
+    font-size: 0.7em;
+    width: 95%;
+    height: 40%;
+  }
+  .mentions-div {
+    font-size: 0.9em;
+  }
+  .Page404-div {
+    font-size: 0.9em;
+  }
+  .signup-div {
+    font-size: 0.9em;
+  }
+  .transports-div {
+    font-size: 0.9em;
+  }
+  
+  /* FOOTER */
+  .footer-button {
+    font-size: 0.5em;
+  }
+
+}
