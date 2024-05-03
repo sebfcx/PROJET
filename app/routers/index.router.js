@@ -16,6 +16,7 @@ router.post('/signup', userAuthController.handleSignupForm);
 router.get('/login', userAuthController.renderLoginPage);
 router.post('/login', userAuthController.handleLoginForm);
 
+router.get('/account', userAuthController.renderAccountPage);
 router.post('/account', userAuthController.renderAccountPage);
 
 export default router;

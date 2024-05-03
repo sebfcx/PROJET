@@ -17,9 +17,5 @@ app.use((req, res) => {
   res.render('404');
 });
 
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.render("error");
-});
 
 export default app;
