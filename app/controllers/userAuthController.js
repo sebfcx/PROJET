@@ -15,9 +15,9 @@ const userAuthController = {
   },
 
   async handleSignupForm(req, res) {
-    const { firstname, lastname, email, password, confirmation } = req.body;
+    const { firstname, lastname, email, password, confirmation } = req.body
 
-    if (!firstname || !lastname || !email || !password || !confirmation) {
+    if ( !firstname || !lastname || !email || !password || !confirmation ) {
       res.render('signup', { errorMessage: 'Tous les messages sont obligatoires' });
       return;
     }
