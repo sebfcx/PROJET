@@ -1,0 +1,26 @@
+/* MAIN -ACCUEIL- */
+
+.accueil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/accueil-v2.jpeg);
+  background-size: cover;
+}
+.accueil-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  backdrop-filter: blur(0.3em);
+  -webkit-backdrop-filter: blur(0.3em);
+  border-radius: 1em;
+  padding: 0.3em;
+  gap: 0.5em;
+}
+.accueil-div-li {
+  text-align: left;
+}
