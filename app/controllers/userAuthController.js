@@ -13,7 +13,7 @@ const userAuthController = {
     Logger.silly('Now serving page Signup');
     return res.render('signup', { cssFile: 'signup.css', pageTitle: 'Signup' });
   },
-  renderAccountPage(_, res) {
+  renderAccountPage(req, res) {
     Logger.silly('Now serving page Account');
     return res.render('account', { cssFile: 'account.css', pageTitle: 'Account' });
   },
@@ -21,17 +21,16 @@ const userAuthController = {
   async handleSignupForm(req, res) {
     const { firstname, lastname, email, password, confirmation } = req.body
 
-    if ( !firstname || !lastname || !email || !password || !confirmation ) {
+    if (!firstname || !lastname || !email || !password || !confirmation) {
       res.render('signup', { errorMessage: 'Tous les messages sont obligatoires' });
-      return;
-    }
-
-    if (password !== confirmation) {
-      res.render('signup', { errorMessage: 'Les mots de passes ne correspondent pas' });
       return;
     }
     if (!emailValidator.validate(email)) {
       res.render('signup', { errorMessage: "Le format de l'email n'est pas valide" });
+      return;
+    }
+    if (password !== confirmation) {
+      res.render('signup', { errorMessage: 'Les mots de passes ne correspondent pas' });
       return;
     }
     if (password.length < 8) {
@@ -42,8 +41,8 @@ const userAuthController = {
     const alreadyExistingUser = await dataMapper.findUserByEmail(email);
     if (alreadyExistingUser) {
       res.render('signup', { errorMessage: 'Cet email est invalide' });
-      return;
     }
+    
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 

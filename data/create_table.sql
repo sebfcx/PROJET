@@ -1,8 +1,8 @@
 BEGIN;
 
-DROP TABLE IF EXISTS "user";
+DROP TABLE IF EXISTS "member";
 
-CREATE TABLE "user" (
+CREATE TABLE "member" (
   "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "firstname" text NOT NULL,
   "lastname" text NOT NULL,
