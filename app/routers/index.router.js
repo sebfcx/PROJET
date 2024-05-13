@@ -1,22 +1,28 @@
-import { Router } from 'express';
-import mainController from '../controllers/mainController.js';
-import userAuthController from '../controllers/userAuthController.js';
+// COMMENTAIRE : inutile d'utiliser un routeur pour les routes standards. Le routeur est comme une mini application au sein de l'application ;
+// On l'utilise principalement pour créer un routage spécifique, comme par exemple pour un administrateur, sur une route spécifique. Exemple : /admin, /admin/dashboard, /admin/account, etc.
 
-const router = Router();
+// import { Router } from 'express';
+// import mainController from '../controllers/mainController.js';
+// import userAuthController from '../controllers/userAuthController.js';
 
-router.get('/', mainController.renderHomePage);
-router.get('/contact', mainController.renderContactPage);
-router.get('/mentions', mainController.renderMentionsPage);
-router.get('/transports', mainController.renderTransportsPage);
-router.get('/vehicules', mainController.renderVehiculesPage);
+// const router = Router();
 
-router.get('/signup', userAuthController.renderSignupPage);
-router.post('/signup', userAuthController.handleSignupForm);
+// router.get('/', mainController.renderHomePage);
+// router.get('/contact', mainController.renderContactPage);
+// router.get('/mentions', mainController.renderMentionsPage);
+// router.get('/transports', mainController.renderTransportsPage);
+// router.get('/vehicules', mainController.renderVehiculesPage);
 
-router.get('/login', userAuthController.renderLoginPage);
-router.post('/login', userAuthController.handleLoginForm);
+// router.route('/signup')
+//   .get(userAuthController.renderSignupPage)
+//   .post(userAuthController.handleSignupForm);
 
-router.get('/account', userAuthController.renderAccountPage);
-router.post('/account', userAuthController.renderAccountPage);
+// router.route('/login')
+//   .get(userAuthController.renderLoginPage)
+//   .post(userAuthController.handleLoginForm);
 
-export default router;
+// router.route('/account')
+//   .get(userAuthController.renderAccountPage)
+//   .post(userAuthController.renderAccountPage);
+
+// export default router;

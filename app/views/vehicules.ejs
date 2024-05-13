@@ -1,15 +1,21 @@
-<%- include('./partials/header-nav') %>
+<%- include('./partials/head') %>
 
-<main class="vehicules">
-      <div class="vehicules-div">
-          <img class="vehicules-div-img" src="../images/vsl01-v2.jpeg" alt="VSL">
-          <img class="vehicules-div-img" src="../images/vsl02-v2.jpeg" alt="VSL">
-      </div>
-      <div class="vehicules-div">
-          <img class="vehicules-div-img" src="../images/amb01-v2.jpeg" alt="AMBULANCES">
-          <img class="vehicules-div-img" src="../images/amb02-v2.jpeg" alt="AMBULANCES">
-      </div>
-    </main>
+    <body>
+        <%- include('./partials/header-nav') %>
 
-<%- include('./partials/footer') %>
-   
+            <main class="vehicules">
+                <div class="vehicules-div">
+                    <!-- COMMENTAIRE : ici tous les chemins étaient relatifs au format ../images/.... ce qui n'est pas bon -->
+                    <img class="vehicules-div-img" src="/images/vsl01-v2.jpeg" alt="VSL">
+                    <img class="vehicules-div-img" src="/images/vsl02-v2.jpeg" alt="VSL">
+                </div>
+                <div class="vehicules-div">
+                    <img class="vehicules-div-img" src="/images/amb01-v2.jpeg" alt="AMBULANCES">
+                    <img class="vehicules-div-img" src="/images/amb02-v2.jpeg" alt="AMBULANCES">
+                </div>
+            </main>
+
+            <%- include('./partials/footer') %>
+    </body>
+
+    </html>

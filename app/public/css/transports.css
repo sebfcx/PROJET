@@ -1,0 +1,26 @@
+/* MAIN -TRANSPORTS- */
+
+.transports {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/accueil-v2.jpeg);
+  background-size: cover;
+}
+.transports-div {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  color: aliceblue;
+  backdrop-filter: blur(1em);
+  -webkit-backdrop-filter: blur(1em);
+  padding: 1.7em;
+  border-radius: 1em;
+  gap: 1em;
+}
+.transports-div-h1 {
+  text-align: center;
+}
+.transports-div-h2 {
+  text-align: center;
+}
