@@ -2,7 +2,6 @@ import { Logger } from "../helpers/Logger/index.js";
 
 const mainController = {
 
-  // COMMENTAIRE : il est préférable de toujours retourner quelque chose.
   renderHomePage(_req, res) {
     Logger.silly('Now serving page Accueil');
     return res.render('accueil', { cssFile: 'accueil.css', pageTitle: 'Accueil' });

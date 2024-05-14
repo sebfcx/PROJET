@@ -7,6 +7,7 @@
   background-image: url(../images/accueil-v2.jpeg);
   background-size: cover;
 }
+
 .mentions-div {
   display: flex;
   flex-direction: column;
@@ -15,12 +16,14 @@
   text-align: center;
   gap: 2em;
 }
+
 .mentions-div-h1 {
   background-color: antiquewhite;
   color: black;
   border: solid black 0.1em;
   padding: 0.1em;
 }
+
 .mentions-div-section {
   backdrop-filter: blur(1em);
   -webkit-backdrop-filter: blur(1em);

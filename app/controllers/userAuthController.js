@@ -1,17 +1,21 @@
 import bcrypt from 'bcrypt';
 import emailValidator from 'email-validator';
 import dataMapper from '../models/dataMapper.js';
+import { Logger } from '../helpers/Logger/index.js';
 
 const userAuthController = {
 
   renderLoginPage(_, res) {
-    return res.render('login');
+    Logger.silly('Now serving page Login')
+    return res.render('login', { cssFile: 'login.css', pageTitle: 'Login' });
   },
   renderSignupPage(_, res) {
-    return res.render('signup');
+    Logger.silly('Now serving page Signup')
+    return res.render('signup', { cssFile: 'signup.css', pageTitle: 'Signup' });
   },
   renderAccountPage(_, res) {
-    return res.render('account');
+    Logger.silly('Now serving page Account')
+    return res.render('account', { cssFile: 'account.css', pageTitle: 'Account' });
   },
 
   async handleSignupForm(req, res) {

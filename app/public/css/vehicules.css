@@ -5,11 +5,13 @@
   flex-direction: column;
   border: solid rgb(29, 135, 228) 0.5em;
 }
+
 .vehicules-div {
   display: flex;
   flex-direction: row;
   height: 75%;
 }
+
 .vehicules-div-img {
   width: 50%;
 }

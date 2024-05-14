@@ -7,6 +7,7 @@
   background-image: url(../images/accueil-v2.jpeg);
   background-size: cover;
 }
+
 .transports-div {
   display: flex;
   flex-direction: column;
@@ -18,9 +19,11 @@
   border-radius: 1em;
   gap: 1em;
 }
+
 .transports-div-h1 {
   text-align: center;
 }
+
 .transports-div-h2 {
   text-align: center;
 }
