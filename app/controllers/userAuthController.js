@@ -5,17 +5,19 @@ import { Logger } from '../helpers/Logger/index.js';
 
 const userAuthController = {
 
+  renderAccountPage(_, res) {
+    Logger.silly('Now serving page Account')
+    return res.render('account', { cssFile: 'account.css', pageTitle: 'Account' });
+  },
+
   renderLoginPage(_, res) {
     Logger.silly('Now serving page Login')
     return res.render('login', { cssFile: 'login.css', pageTitle: 'Login' });
   },
+
   renderSignupPage(_, res) {
     Logger.silly('Now serving page Signup')
     return res.render('signup', { cssFile: 'signup.css', pageTitle: 'Signup' });
-  },
-  renderAccountPage(_, res) {
-    Logger.silly('Now serving page Account')
-    return res.render('account', { cssFile: 'account.css', pageTitle: 'Account' });
   },
 
   async handleSignupForm(req, res) {
@@ -62,8 +64,9 @@ const userAuthController = {
     if (!isMatching) {
       return res.render('login', { errorMessage: 'Mauvais couple email/password' });
     }
-    return res.redirect('account');
+    return res.redirect('account', email);
   },
+  
 };
 
 export default (userAuthController);

@@ -20,6 +20,5 @@ router.route('/login')
 
 router.route('/account')
 .get(userAuthController.renderAccountPage)
-.post(userAuthController.renderAccountPage);
 
 export default router;
