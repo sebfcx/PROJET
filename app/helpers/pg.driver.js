@@ -1,9 +1,7 @@
 import pg from 'pg';
 
-const pool = new pg.Pool(process.env.DATABASE_URL);
+const client = new pg.Client(process.env.DATABASE_URL);
 
-pool.on('error', (err) => {
-  logger.error('Erreur dans le pool de connexions PostgreSQL :', err);
-});
+client.connect();
 
-export default pool;
+export default client;
