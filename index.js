@@ -1,7 +1,7 @@
-import './app/helpers/env.loader.helper.js';
 import http from 'node:http';
-import { logMoment, Logger } from './app/helpers/Logger/index.js';
 import app from './app/index.app.js';
+import './app/helpers/env.loader.helper.js';
+import { logMoment, Logger } from './app/helpers/Logger/index.js';
 
 const server = http.createServer(app);
 

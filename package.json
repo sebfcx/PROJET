@@ -1,11 +1,10 @@
 {
-  "name": "sebfcx",
+  "name": "projet",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon index.js"
+    "dev": "npx nodemon"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +18,6 @@
     "express": "^4.19.2",
     "express-validator": "^7.0.1",
     "helmet": "^7.1.0",
-    "nodemon": "^3.1.0",
     "pg": "^8.11.5",
     "winston": "^3.13.0"
   },

@@ -6,6 +6,7 @@ import { join, dirname } from 'path';
 import router from './routers/index.router.js';
 
 const app = express();
+
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
