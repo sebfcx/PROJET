@@ -34,15 +34,15 @@
   }
 
   .header-img {
-    width: 9em;
     height: 9em;
+    width: 9em;
   }
   
   .header-h1 {
     font-size: 5em;
   }
 
-  .header-button {
+  .header-a {
     font-size: 1.1em;
     margin: 0.4em;
   }
@@ -52,11 +52,11 @@
 
   .nav {
     flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-    padding: 0.5em;
-    width: 100%;
     gap: 0em;
+    justify-content: space-around;
+    padding: 0.5em;
+    text-align: center;
+    width: 100%;
   }
 
   .nav-a {
@@ -109,7 +109,7 @@
     width: 100%;
   }
 
-  .footer-button {
+  .footer-a {
     font-size: 1.1em;
   }
 
@@ -125,15 +125,15 @@
   /* HEADER */
 
   .header-img {
-    width: 7em;
     height: 7em;
+    width: 7em;
   }
 
   .header-h1 {
     font-size: 4em;
   }
 
-  .header-button {
+  .header-a {
     font-size: 0.9em;
     margin: 0.3em;
   }
@@ -158,9 +158,9 @@
   }
 
   .contact-div {
-    justify-content: center;
     font-size: 1.1em;
     height: 45%;
+    justify-content: center;
     width: 70%;
   }
 
@@ -184,7 +184,7 @@
 
   /* FOOTER */
 
-  .footer-button {
+  .footer-a {
     font-size: 0.9em;
   }
 
@@ -200,15 +200,15 @@
   /* HEADER */
 
   .header-img {
-    width: 5em;
     height: 5em;
+    width: 5em;
   }
 
   .header-h1 {
     font-size: 3em;
   }
 
-  .header-button {
+  .header-a {
     font-size: 0.7em;
     margin: 0.2em;
   }
@@ -242,8 +242,8 @@
 
   .signup-div {
     font-size: 0.9em;
-    width: 70%;
     height: 55%;
+    width: 70%;
   }
 
   .transports-div {
@@ -261,14 +261,14 @@
   }
 
   .vehicules-div-img {
-    width: 100%;
     height: 50%;
+    width: 100%;
   }
   
 
   /* FOOTER */
 
-  .footer-button {
+  .footer-a {
     font-size: 0.7em;
   }
 
@@ -284,15 +284,15 @@
   /* HEADER */
 
   .header-img {
-    width: 3em;
     height: 3em;
+    width: 3em;
   }
 
   .header-h1 {
     font-size: 2em;
   }
 
-  .header-button {
+  .header-a {
     font-size: 0.5em;
     margin: 0.1em;
   }
@@ -313,8 +313,8 @@
 
   .contact-div {
     font-size: 0.7em;
-    width: 95%;
     height: 40%;
+    width: 95%;
   }
 
   .mentions-div {
@@ -336,7 +336,7 @@
   
   /* FOOTER */
   
-  .footer-button {
+  .footer-a {
     font-size: 0.5em;
   }
 
