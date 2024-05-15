@@ -1,3 +1,4 @@
+import { Logger } from "../helpers/Logger/index.js"
 import bcrypt from 'bcrypt';
 import emailValidator from 'email-validator';
 import dataMapper from '../models/dataMapper.js';
@@ -34,6 +35,10 @@ const userAuthController = {
     }
     if (!emailValidator.validate(email)) {
       res.render('signup', { errorMessage: "Le format de l'email n'est pas valide" });
+      return;
+    }
+    if (password !== confirmation) {
+      res.render('signup', { errorMessage: 'Les mots de passes ne correspondent pas' });
       return;
     }
     if (password.length < 8) {

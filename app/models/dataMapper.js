@@ -1,6 +1,7 @@
 import client from '../helpers/pg.driver.js';
 
-export default {
+const dataMapper = {
+
   async findUserByEmail(email) {
     const result = await client.query('SELECT * FROM "member" WHERE email = $1', [email]);
 
@@ -13,6 +14,8 @@ export default {
 
   async createUser(firstname, lastname, email, hashedPassword) {
     const user = await client.query('INSERT INTO "member" (firstname, lastname, email, password) VALUES ($1, $2, $3, $4)', [firstname, lastname, email, hashedPassword]);
-    return [user.rows];
+    return user.rows[0];
   },
 };
+
+ export default dataMapper;
