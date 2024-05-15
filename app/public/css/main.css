@@ -65,8 +65,19 @@ footer {
   border-radius: 0.3em;
   padding: 0.2em;
 }
+.header-section{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 .header-button {
-  margin: 0.5em;
+  text-align: center;
+  font-size: 1.1em;
+  background-color: white;
+  color: black;
+  border: solid 0.1em black;
+  border-radius: 1em;
+  padding: 0.3em;
   cursor: pointer;
 }
 
@@ -87,6 +98,7 @@ footer {
   border: solid 0.1em black;
   border-radius: 1em;
   padding: 0.3em;
+  cursor: pointer;
 }
 
 /* FOOTER */
@@ -100,6 +112,8 @@ footer {
 .footer-button {
   font-size: 1.5em;
   background-color: antiquewhite;
-  padding: 0.1em;
+  border: solid 0.1em black;
+  border-radius: 1em;
+  padding: 0.3em;
   cursor: pointer;
 }

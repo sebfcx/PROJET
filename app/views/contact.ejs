@@ -1,56 +1,49 @@
 <%- include('./partials/head') %>
 
-  <body>
-
-    <%- include('./partials/header-nav') %>
-
-      <main class="contact">
-        <div class="contact-div">
-          <h1 class="contact-div-h1">LE SAVIEZ-VOUS ?</h1>
+  <%- include('./partials/header-nav') %>
+    <main class="contact">
+      <div class="contact-div">
+        <h1 class="contact-div-h1">LE SAVIEZ-VOUS ?</h1>
+        <br>
+        <p class="contact-div-p">
+          PAR DÉCISION MINISTÉRIELLE DU 24/04/1968, <br>
+          VOUS AVEZ LE LIBRE CHOIX DE VOTRE AMBULANCIER <br>
+          EXIGEZ-LE SURTOUT LORS DE VOS ENTRÉES ET SORTIES D'HOSPITALISATION ! <br>
+        </p>
+        <br>
+        <p class="contact-div-p">
+          <u>Pour plus de renseignements :</u> <br>
           <br>
-          <p class="contact-div-p">
-            PAR DÉCISION MINISTÉRIELLE DU 24/04/1968, <br>
-            VOUS AVEZ LE LIBRE CHOIX DE VOTRE AMBULANCIER <br>
-            EXIGEZ-LE SURTOUT LORS DE VOS ENTRÉES ET SORTIES D'HOSPITALISATION ! <br>
-          </p>
+          Contactez-nous en priorité au 02.XX.XX.XX.XX <br>
           <br>
-          <p class="contact-div-p">
-            <u>Pour plus de renseignements :</u> <br>
-            <br>
-            Contactez-nous en priorité au 02.XX.XX.XX.XX <br>
-            <br>
-            Courriel : <br>
-            contact@ambulanceX.com
-          </p>
-        </div>
-        <div class="contact-div">
-          <h1 class="contact-div-h1">CONTACT</h1>
+          Courriel : <br>
+          contact@ambulanceX.com
+        </p>
+      </div>
+      <div class="contact-div">
+        <h1 class="contact-div-h1">CONTACT</h1>
+        <br>
+        <form class="contact-div-form" action="/contact" method="POST">
+          <label>
+            Nom:
+            <input type="text" name="Nom">
+          </label>
+          <label>
+            Prénom:
+            <input type="text" name="Prénom">
+          </label>
+          <label>
+            Email:
+            <input type="email" name="email">
+          </label>
+          <label>
+            Votre message:
+            <textarea name="message"></textarea>
+          </label>
           <br>
-          <form class="contact-div-form" action="/contact" method="POST">
-            <label>
-              Nom:
-              <input type="text" name="Nom">
-            </label>
-            <label>
-              Prénom:
-              <input type="text" name="Prénom">
-            </label>
-            <label>
-              Email:
-              <input type="email" name="email">
-            </label>
-            <label>
-              Votre message:
-              <textarea name="message"></textarea>
-            </label>
-            <br>
-            <button type="submit">Envoyer</button>
-          </form>
-        </div>
-      </main>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </main>
 
-      <%- include('./partials/footer') %>
-
-  </body>
-
-  </html>
+    <%- include('./partials/footer') %>
