@@ -22,27 +22,28 @@ const userAuthController = {
     const { firstname, lastname, email, password, confirmation } = req.body
 
     if (!firstname || !lastname || !email || !password || !confirmation) {
-      res.render('signup', { errorMessage: 'Tous les messages sont obligatoires' });
-      return;
+      return res.render('signup', { errorMessage: 'Tous les messages sont obligatoires' });
+    }
+
+    if (password !== confirmation) {
+      return res.render('signup', { errorMessage: 'Les mots de passes ne correspondent pas' });
     }
     if (!emailValidator.validate(email)) {
-      res.render('signup', { errorMessage: "Le format de l'email n'est pas valide" });
-      return;
+      return res.render('signup', { errorMessage: "Le format de l'email n'est pas valide" });
     }
     if (password !== confirmation) {
       res.render('signup', { errorMessage: 'Les mots de passes ne correspondent pas' });
       return;
     }
     if (password.length < 8) {
-      res.render('signup', { errorMessage: 'Le mot de passe doit contenir au moins 8 caractères' });
-      return;
+      return res.render('signup', { errorMessage: 'Le mot de passe doit contenir au moins 8 caractères' });
     }
 
     const alreadyExistingUser = await dataMapper.findUserByEmail(email);
     if (alreadyExistingUser) {
-      res.render('signup', { errorMessage: 'Cet email est invalide' });
+      return res.render('signup', { errorMessage: 'Cet email est invalide' });
     }
-    
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 

@@ -26,8 +26,8 @@ app.use(express.static(join(__dirname, 'app', 'public')));
 app.get('/', mainController.renderHomePage);
 app.get('/contact', mainController.renderContactPage);
 app.get('/mentions', mainController.renderMentionsPage);
-app.get('/transports', mainController.renderTransportsPage);
 app.get('/vehicules', mainController.renderVehiculesPage);
+app.get('/transports', mainController.renderTransportsPage);
 
 // COMMENTAIRE : ici on peut utiliser la méthode .route() pour définir la route
 // et ensuite chaîner les méthodes .get() et .post() pour éviter de répéter
@@ -45,7 +45,12 @@ app.route('/account')
   .post(userAuthController.renderAccountPage);
 
 app.use((req, res) => {
-  return res.render('404', { cssFile: '404.css', pageTitle: 'Page introuvable' });
+  return res.render('404',
+    {
+      cssFile: '404.css',
+      pageTitle: 'Page introuvable'
+    }
+  );
 });
 
 app.listen(port, () => {
