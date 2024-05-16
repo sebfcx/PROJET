@@ -22,7 +22,7 @@ const userAuthController = {
 
   async handleSignupForm(req, res) {
     const { firstname, lastname, email, password, confirmation, } = req.body
-
+    console.log(req.body)
     if (!firstname || !lastname || !email || !password || !confirmation) {
       console.log(firstname)
       return res.render('signup', { errorMessage: 'Tous les messages sont obligatoires' });
@@ -57,6 +57,9 @@ const userAuthController = {
     const user = await dataMapper.createUser(firstname, lastname, email, hashedPassword);
 
     if (user) {
+      
+      console.log(user);
+      
       res.redirect('login');
     }
   },

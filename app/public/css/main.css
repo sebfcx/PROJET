@@ -58,27 +58,29 @@ footer {
 .header {
   align-items: center;
   display: flex;
+  justify-content: space-between;
   height: 100%;
-  justify-content: space-around;
 }
 
 .header-img {
   height: 11em;
   width: 11em;
+  margin: 1em;
 }
 
 .header-h1 {
-  background-color: rgb(91, 91, 239);
+  background-color: royalblue;
   border: solid 0.1em black;
   border-radius: 0.3em;
   color: white;
   font-size: 6em;
-  padding: 0.2em;
+  padding: 0.1em 0.7em 0.1em 0.7em;
 }
 
 .header-section{
   display: flex;
   flex-direction: column;
+  margin: 1em;
 }
 
 .header-a {
@@ -94,9 +96,9 @@ footer {
 .nav {
   align-items: center;
   display: flex;
-  gap: 5em;
   height: 100%;
   justify-content: space-around;
+  padding: 1em;
 }
 
 .nav-a {

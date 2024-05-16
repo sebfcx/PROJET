@@ -10,7 +10,7 @@
 
 .accueil-div {
   align-items: center;
-  backdrop-filter: blur(0.3em);
+  backdrop-filter: blur(1em);
   border-radius: 1em;
   color: white;
   display: flex;
@@ -20,7 +20,7 @@
   justify-content: center;
   padding: 0.3em;
   text-align: center;
-  -webkit-backdrop-filter: blur(0.3em);
+  -webkit-backdrop-filter: blur(1em);
 }
 
 .accueil-div-li {

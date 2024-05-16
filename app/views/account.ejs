@@ -1,14 +1,46 @@
 <%- include('./partials/head') %>
 
-  <%- include('./partials/header-nav') %>
-    <main>
-      <div class="account">
-        <section class="account-section">
-          <h2>Informations sur l'utilisateur</h2>
-          <p>Nom: <span id="user-lastname">seb</span></p>
-          <p>Prénom: <span id="user-firstname">fcx</span></p>
-          <p>Email: <span id="user-email">sebfcx@gmail.com</span></p>
-        </section>
-      </div>
-    </main>
-  <%- include('./partials/footer') %> 
+<%- include('./partials/header-nav') %>
+
+<main class="account">
+
+  <h1 class="account-title">Gestion de compte</h1>
+
+  <div class="account-div">
+    
+    <h2>Informations de compte :<h2>
+      
+      <label for="firstname">
+        <u>Prénom :</u>
+      </label>
+      <p>Jojo</p>
+      <label for="lastname">
+        <u>Nom :</u>
+      </label>
+      <p>Lasticot</p>
+      <label for="email">
+        <u>Courriel :</u>
+      </label>
+      <p>jojolasticot@gmail.com</p>
+
+  </div>
+    
+  <div class="account-div">
+
+    <h2>Modification de mot de passe</h2>
+
+    <form action="/change-password" method="post">
+      <label for="current-password">Mot de passe actuel:</label>
+      <input type="password" id="current-password" name="current-password" required><br>
+      <label for="new-password">Nouveau mot de passe:</label>
+      <input type="password" id="new-password" name="new-password" required><br>
+      <label for="confirm-new-password">Confirmer le nouveau mot de passe:</label>
+      <input type="password" id="confirm-new-password" name="confirm-new-password" required><br>
+      <input type="submit" value="Changer le mot de passe">
+    </form>
+    
+  </div>
+
+</main>
+
+<%- include('./partials/footer') %> 

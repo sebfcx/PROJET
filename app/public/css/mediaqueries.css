@@ -2,7 +2,6 @@
 
 @media screen and (max-width: 900px) {
  
-  
   /* FLEX */
 
   .container {
@@ -79,8 +78,12 @@
     height: 45%;
   }
 
+  .login-div-form {
+    font-size: 1.3em;
+  }
+
   .mentions-div {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   .Page404-div {
@@ -164,6 +167,14 @@
     width: 70%;
   }
 
+  .login-div-form {
+    font-size: 1.1em;
+  }
+
+  .login-input {
+    font-size: 1.1em;
+  }
+
   .mentions-div {
     font-size: 1.3em;
   }
@@ -236,6 +247,14 @@
     font-size: 1.1em;
   }
 
+  .login-div-form {
+    font-size: 0.9em;
+  }
+
+  .login-input {
+    font-size: 0.9em;
+  }
+
   .Page404-div {
     font-size: 1.1em;
   }
@@ -270,6 +289,96 @@
 
   .footer-a {
     font-size: 0.7em;
+  }
+
+}
+
+/*  MEDIA QUERIES 400PX */
+
+@media screen and (max-width: 400px) {
+  
+
+  /* HEADER */
+
+  .header-img {
+    height: 4em;
+    width: 4em;
+  }
+
+  .header-h1 {
+    font-size: 2em;
+  }
+
+  .header-a {
+    font-size: 0.6em;
+    margin: 0.1em;
+  }
+
+
+  /* NAV */
+
+  .nav-a {
+    font-size: 0.9em;
+  }
+
+
+  /* MAIN */
+
+  .accueil-div {
+    font-size: 1.1em;
+  }
+
+  .contact-div {
+    font-size: 0.8em;
+    width: 90%;
+  }
+
+  .mentions-div {
+    font-size: 1em;
+  }
+
+  .login-div-form {
+    font-size: 0.8em;
+  }
+
+  .login-input {
+    font-size: 0.8em;
+  }
+
+  .Page404-div {
+    font-size: 1em;
+  }
+
+  .signup-div {
+    font-size: 0.8em;
+    height: 55%;
+    width: 70%;
+  }
+
+  .transports-div {
+    font-size: 0.9em;
+  }
+
+  .vehicules {
+    height: 100%;
+  }
+
+  .vehicules-div {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+  }
+
+  .vehicules-div-img {
+    height: 50%;
+    width: 100%;
+  }
+  
+
+  /* FOOTER */
+
+  .footer-a {
+    font-size: 0.6em;
   }
 
 }
@@ -317,6 +426,14 @@
     width: 95%;
   }
 
+  .login-div-form {
+    font-size: 0.7em;
+  }
+
+  .login-input {
+    font-size: 0.7em;
+  }
+
   .mentions-div {
     font-size: 0.9em;
   }
@@ -326,11 +443,11 @@
   }
 
   .signup-div {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
 
   .transports-div {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 
   

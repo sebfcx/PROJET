@@ -1,20 +1,31 @@
 <%- include('./partials/head') %>
 
-  <%- include('./partials/header-nav') %>
+<%- include('./partials/header-nav') %>
 
-    <main class="login">
-      <div class="login-div">
-        <h1><u>Connexion</u></h1>
-        <br>
-        <form class="login-div-form" action="/login" method="post">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-          <br>
-          <input type="submit" value="Login">
-        </form>
-      </div>
-    </main>
+<main class="login">
+  <div class="login-div">
 
-    <%- include('./partials/footer') %>
+    <h1><u>Connexion</u></h1>
+
+    <form class="login-div-form" action="/login" method="post">
+      
+      
+      <label for="email">
+        Email:
+        <input type="email" id="email" name="email" required>
+      </label>
+      
+      <label for="password">
+        Password:
+        <input type="password" id="password" name="password" required>
+      </label>
+
+      <input class="login-div-input" type="submit" value="Valider">
+      
+    </form>
+
+
+  </div>
+</main>
+
+<%- include('./partials/footer') %>
