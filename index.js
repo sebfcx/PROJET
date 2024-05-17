@@ -14,7 +14,9 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 app.set('views', 'app/views');
 app.set('view engine', 'ejs');
 
@@ -29,9 +31,6 @@ app.get('/mentions', mainController.renderMentionsPage);
 app.get('/vehicules', mainController.renderVehiculesPage);
 app.get('/transports', mainController.renderTransportsPage);
 
-// COMMENTAIRE : ici on peut utiliser la méthode .route() pour définir la route
-// et ensuite chaîner les méthodes .get() et .post() pour éviter de répéter
-// le nom de la route à chaque fois.
 app.route('/signup')
   .get(userAuthController.renderSignupPage)
   .post(userAuthController.handleSignupForm);
@@ -44,7 +43,7 @@ app.route('/account')
   .get(userAuthController.renderAccountPage)
   .post(userAuthController.renderAccountPage);
 
-app.use((req, res) => {
+app.use((_req, res) => {
   return res.render('404',
     {
       cssFile: '404.css',

@@ -1,16 +1,39 @@
 <%- include('./partials/head') %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <%- include('./partials/header-nav') %>
-
     <main class="vehicules">
-        <div class="vehicules-div">
-            <!-- COMMENTAIRE : ici tous les chemins étaient relatifs au format ../images/.... ce qui n'est pas bon -->
-            <img class="vehicules-div-img" src="/images/vsl01-v2.jpeg" alt="VSL">
-            <img class="vehicules-div-img" src="/images/vsl02-v2.jpeg" alt="VSL">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <% for (let image of images ) { %>
+            <div class="swiper-slide">
+              <img src="images/<%= image.src  %>" alt="<%= image.alt %>" height="<%= image.height %>"
+                width="<%= image.width %>">
+            </div>
+            <% } %>
         </div>
-        <div class="vehicules-div">
-            <img class="vehicules-div-img" src="/images/amb01-v2.jpeg" alt="AMBULANCES">
-            <img class="vehicules-div-img" src="/images/amb02-v2.jpeg" alt="AMBULANCES">
-        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        direction: "horizontal",
+        grabCursor: true,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        centeredSlides: true,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        mousewheel: {
+          forceToAxis: true
+        },
+        slideActiveClass: "is-active",
+        slideDuplicateActiveClass: "is-active"
+      })
+    </script>
 
-  <%- include('./partials/footer') %>
+    <%- include('./partials/footer') %>

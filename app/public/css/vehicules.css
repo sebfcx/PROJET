@@ -2,14 +2,17 @@
 
 .vehicules {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   border: solid rgb(29, 135, 228) 0.5em;
+  height: 70%;
+  width: 70%;
 }
-.vehicules-div {
-  display: flex;
-  flex-direction: row;
-  height: 75%;
-}
-.vehicules-div-img {
-  width: 50%;
+
+/* SWIPER */
+
+.swiper {
+  width: 100%;
+  height: 100%;
 }
