@@ -22,14 +22,12 @@ const userAuthController = {
 
   async handleSignupForm(req, res) {
     const { firstname, lastname, email, password, confirmation, } = req.body
+    
     console.log(req.body)
+    
     if (!firstname || !lastname || !email || !password || !confirmation) {
       console.log(firstname)
       return res.render('signup', { errorMessage: 'Tous les messages sont obligatoires' });
-    }
-
-    if (password !== confirmation) {
-      return res.render('signup', { errorMessage: 'Les mots de passes ne correspondent pas' });
     }
 
     if (!emailValidator.validate(email)) {
@@ -66,21 +64,28 @@ const userAuthController = {
 
   async handleLoginForm(req, res) {
     const { email, password } = req.body;
+    
+    console.log(req.body)
 
-    const user = await dataMapper.findUserByEmail(email);
+    const member = await dataMapper.findMemberByEmail(email);
 
-    if (!user) {
+    if (!member) {
       return res.render('login', { errorMessage: 'Mauvais couple email/password' });
     }
 
-    const isMatching = await bcrypt.compare(password, user.password);
+    const isMatching = await bcrypt.compare(password, member.password);
+
+    if (!bcrypt.compare(password, member.password)) {
+      return res.render('signup', { errorMessage: "Mot de passe incorrect" });
+    }
 
     if (!isMatching) {
       return res.render('login', { errorMessage: 'Mauvais couple email/password' });
     }
     return res.redirect('account');
+
   },
-  
+
 };
 
 export default userAuthController;

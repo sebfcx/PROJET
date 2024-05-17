@@ -1,33 +1,52 @@
 /* MAIN -ACCOUNT- */
 
 .account {
-    align-items: center;
-    background-image: url(../images/accueil-v2.jpeg);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1em;
-  }
+  align-items: center;
+  background-image: url(../images/accueil-v2.jpeg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
 
-  .account-div {
-    background-color: aliceblue;
-    border: solid black 0.5em;
-    display: flex;
-    font-size: 1.5em;
-    flex-direction: column;
-    gap: 1em;
-    padding: 1em;
-    text-align: left;
-  }
+.account-div {
+  background-color: aliceblue;
+  border: solid black 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding: 3em;
+  text-align: left;
+}
 
-  account-div-h2 {
-    font-weight: bold;
-  }
+.account-div-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  gap: 1em;
+}
 
-  .account-title {
-    background-color: aliceblue;
-    border: solid black 0.5em;
-    padding: 0.7em;
-    text-align: center;
-  }
+.account-div-h1 {
+  align-self: center;
+  background-color: whitesmoke;
+  border: solid black 0.1em;
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+.account-div-h2 {
+  align-self: center;
+  font-size: 1.5em;
+}
+
+.account-div-input {
+  align-self: center;
+  font-weight: bold;
+  padding: 0.2em;
+}
+
+.account-div-section {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  gap: 1em;
+}

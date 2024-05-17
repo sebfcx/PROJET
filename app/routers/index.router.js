@@ -10,13 +10,16 @@ router.get('/mentions', mainController.renderMentionsPage);
 router.get('/transports', mainController.renderTransportsPage);
 router.get('/vehicules', mainController.renderVehiculesPage);
 
-router.route('/signup')
-.get(userAuthController.renderSignupPage)
-.post(userAuthController.handleSignupForm);
+router.route('/account')
+.get(userAuthController.renderAccountPage)
 
 router.route('/login')
 .get(userAuthController.renderLoginPage)
 .post(userAuthController.handleLoginForm);
+
+router.route('/signup')
+.get(userAuthController.renderSignupPage)
+.post(userAuthController.handleSignupForm);
 
 router.route('/account')
 .get(userAuthController.renderAccountPage)

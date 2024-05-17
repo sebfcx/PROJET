@@ -9,9 +9,13 @@ html {
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: white;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", "Arial, sans-serif";
+}
+
+a {
+  text-decoration: none;
 }
 
 .alert {
@@ -52,7 +56,6 @@ footer {
 }
 
 
-
 /* HEADER */
 
 .header {
@@ -65,7 +68,7 @@ footer {
 .header-img {
   height: 11em;
   width: 11em;
-  margin: 1em;
+  margin: 3em;
 }
 
 .header-h1 {
@@ -80,13 +83,14 @@ footer {
 .header-section{
   display: flex;
   flex-direction: column;
-  margin: 1em;
+  margin: 3em;
+  gap: 1em;
 }
 
 .header-a {
   color: black;
   cursor: pointer;
-  margin: 0.5em;
+  font-weight: bold;
 }
 
 
@@ -107,7 +111,7 @@ footer {
   border-radius: 1em;
   color: royalblue;
   font-size: 2em;
-  padding: 0.3em;
+  padding: 0.4em;
   cursor: pointer;
 }
 
