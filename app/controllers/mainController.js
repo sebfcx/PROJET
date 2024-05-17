@@ -53,4 +53,4 @@ const mainController = {
 
 };
 
-export default (mainController);
+export default mainController;

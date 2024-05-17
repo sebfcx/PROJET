@@ -1,6 +1,7 @@
 /* MAIN -VEHICULES- */
 
 .vehicules {
+  border: solid rgb(29, 135, 228) 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;

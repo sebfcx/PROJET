@@ -1,29 +1,33 @@
 /* MAIN -MENTIONS- */
 
 .mentions {
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-image: url(../images/accueil-v2.jpeg);
   background-size: cover;
+  display: flex;
+  justify-content: center;
 }
+
 .mentions-div {
+  color: antiquewhite;
   display: flex;
   flex-direction: column;
   font-size: 2em;
-  color: antiquewhite;
+  gap: 2em;
   text-align: center;
 }
+
 .mentions-div-h1 {
   background-color: antiquewhite;
-  color: black;
   border: solid black 0.1em;
+  color: black;
   padding: 0.1em;
 }
+
 .mentions-div-section {
   backdrop-filter: blur(1em);
-  -webkit-backdrop-filter: blur(1em);
   border-radius: 1em;
-  padding: 1em;
   gap: 1em;
+  padding: 1em;
+  -webkit-backdrop-filter: blur(1em);
 }

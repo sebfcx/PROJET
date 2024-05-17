@@ -1,26 +1,28 @@
 /* MAIN -ACCUEIL- */
 
 .accueil {
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-image: url(../images/accueil-v2.jpeg);
   background-size: cover;
+  display: flex;
+  justify-content: center;
 }
+
 .accueil-div {
+  align-items: center;
+  backdrop-filter: blur(0.3em);
+  border-radius: 1em;
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   font-size: 2em;
-  color: white;
-  backdrop-filter: blur(0.3em);
-  -webkit-backdrop-filter: blur(0.3em);
-  border-radius: 1em;
-  padding: 0.3em;
   gap: 0.5em;
+  justify-content: center;
+  padding: 0.3em;
+  text-align: center;
+  -webkit-backdrop-filter: blur(0.3em);
 }
+
 .accueil-div-li {
   text-align: left;
 }
