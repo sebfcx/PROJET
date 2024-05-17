@@ -1,6 +1,3 @@
-import { Logger } from "../helpers/Logger/index.js";
-
-
 const mainController = {
   renderHomePage(_req, res) {
     return res.render('accueil', { cssFile: 'accueil.css', pageTitle: 'Accueil' });
