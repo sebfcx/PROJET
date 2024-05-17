@@ -6,8 +6,8 @@
   align-items: center;
   flex-direction: column;
   border: solid rgb(29, 135, 228) 0.5em;
-  height: 70%;
-  width: 70%;
+  height: 100%;
+  width: 100%;
 }
 
 /* SWIPER */

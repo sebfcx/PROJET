@@ -1,7 +1,7 @@
 import cors from 'cors';
+import url from 'node:url';
 import helmet from 'helmet';
 import express from 'express';
-import url from 'node:url';
 import { join, dirname } from 'path';
 import './app/helpers/env.loader.helper.js';
 import mainController from './app/controllers/mainController.js';
