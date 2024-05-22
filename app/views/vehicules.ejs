@@ -1,16 +1,24 @@
-<%- include('./partials/head') %>
-  <%- include('./partials/header-nav') %>
+<!DOCTYPE html>
 
-    <main class="vehicules">
-        <div class="vehicules-div">
-            <!-- COMMENTAIRE : ici tous les chemins étaient relatifs au format ../images/.... ce qui n'est pas bon -->
-            <img class="vehicules-div-img" src="/images/vsl01-v2.jpeg" alt="VSL">
-            <img class="vehicules-div-img" src="/images/vsl02-v2.jpeg" alt="VSL">
+<html lang="fr">
+  
+  <%- include('./partials/head') %>
+  <body>
+    <div class="container">
+      
+      <%- include('./partials/header-nav') %>
+      
+      <main>
+        <div class="vehicules">
+          <div class="vehicules-slide">
+            <img id="picture" onclick="Slide(1)" src="images/vsl01.webp" alt="Photo de Véhicule Sanitaire Léger">
+          </div>
         </div>
-        <div class="vehicules-div">
-            <img class="vehicules-div-img" src="/images/amb01-v2.jpeg" alt="AMBULANCES">
-            <img class="vehicules-div-img" src="/images/amb02-v2.jpeg" alt="AMBULANCES">
-        </div>
-    </main>
-
-  <%- include('./partials/footer') %>
+      </main>
+      
+      <%- include('./partials/footer') %>
+      
+    </div>
+    <script src="js/slide.js"></script>
+  </body>
+</html>

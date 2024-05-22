@@ -2,51 +2,32 @@
 
 .account {
   align-items: center;
-  background-image: url(../images/accueil-v2.jpeg);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
-.account-div {
-  background-color: aliceblue;
+  background-color: whitesmoke;
   border: solid black 0.5em;
+  border-radius: 2em;
   display: flex;
   flex-direction: column;
-  gap: 3em;
-  padding: 3em;
-  text-align: left;
+  gap: 2em;
+  padding: 1em;
 }
 
-.account-div-form {
+.account-form {
   display: flex;
   flex-direction: column;
-  font-size: 1.5em;
   gap: 1em;
 }
 
-.account-div-h1 {
+.account-form input {
   align-self: center;
-  background-color: whitesmoke;
-  border: solid black 0.1em;
-  font-size: 2em;
-  padding: 0.5em;
+  font-size: 1em;
+  font-weight: bolder;
+}
+.account-form label {
+  text-decoration: underline;
 }
 
-.account-div-h2 {
-  align-self: center;
-  font-size: 1.5em;
-}
-
-.account-div-input {
-  align-self: center;
-  font-weight: bold;
-  padding: 0.2em;
-}
-
-.account-div-section {
+.account-section {
   display: flex;
   flex-direction: column;
-  font-size: 1em;
   gap: 1em;
 }

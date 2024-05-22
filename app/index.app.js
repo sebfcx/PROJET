@@ -10,11 +10,9 @@ const app = express();
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-//app.use(
-//  helmet({
-//    contentSecurityPolicy: false,
-//    }),
-//);
+app.use(helmet({
+    contentSecurityPolicy: false
+}));
 
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');

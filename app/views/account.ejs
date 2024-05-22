@@ -1,49 +1,57 @@
-<%- include('./partials/head') %>
+<!DOCTYPE html>
 
-<%- include('./partials/header-nav') %>
-
-<main class="account">
-  <div class="account-div">
-    
-    <h1 class="account-div-h1">Gestion de compte</h1>
-
-    <h2 class="account-div-h2">
-      <u>Informations de compte :</u>
-    <h2>
+<html lang="fr">
+  
+  <%- include('./partials/head') %>
+  
+  <body>
+    <div class="container">
       
-    <section class="account-div-section">
-      <label for="firstname">
-        Prénom :
-      </label>
-      <label for="lastname">
-        Nom :  
-      </label>
-      <label for="email">
-        Courriel : 
-      </label>
-    </section>
+      <%- include('./partials/header-nav') %>
+      
+      <main>
+        <div class="account">
 
-    <h2 class="account-div-h2">
-      <u>Modification de mot de passe :</u>
-    </h2>
+          <h1 class="account-h1">Informations de compte</h1>
 
-    <form class="account-div-form" action="/account" method="post">
-      <label for="currentPassword">
-        <u>Mot de passe actuel</u>:
-        <input type="password" id="currentPassword" name="currentPassword" required>
-      </label>
-      <label for="newPassword">
-        <u>Nouveau mot de passe</u>:
-        <input type="password" id="newPassword" name="newPassword" required>
-      </label>
-      <label for="confirmNewPassword">
-        <u>Confirmer le nouveau mot de passe</u>:
-        <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
-      </label>
-      <input class="account-div-input" type="submit" value="Valider">
-    </form>
+          <section class="account-section">
+            <h2>Informations de compte</h2>
+            <label for="firstname">
+              Prénom :
+              <p id="infoFirstname"></p>
+            </label>
+            <label for="lastname">
+              Nom :
+              <p id="infoLastname"></p>
+            </label>
+            <label for="email">
+              Courriel :
+              <p id="infoEmail"></p>
+            </label>
+          </section>
+          
+          <form class="account-form" action="/account" method="post">
+            <h2>Modification de mot de passe</h2>
+            <label for="currentPassword">
+              Mot de passe actuel :
+              <input type="password" id="currentPassword" name="currentPassword" required>
+            </label>
+            <label for="newPassword">
+              Nouveau mot de passe
+              <input type="password" id="newPassword" name="newPassword" required>
+            </label>
+            <label for="confirmNewPassword">
+              <u>Confirmation</u>:
+              <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+            </label>
+            <input type="submit" value="Valider">
+          </form>
+        
+        </div>
+      </main>
 
-  </div>
-</main>
-
-<%- include('./partials/footer') %> 
+      <%- include('./partials/footer') %>
+    
+    </div>
+  </body>
+</html>

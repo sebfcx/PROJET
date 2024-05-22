@@ -1,14 +1,6 @@
 /* MAIN -404- */
 
 .Page404 {
-  align-items: center;
-  background-image: url(../images/accueil-v2.jpeg);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
-.Page404-div {
   background-color: antiquewhite;
   border: solid black 0.5em;
   border-radius: 0.5em;
