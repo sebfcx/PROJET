@@ -1,5 +1,5 @@
 import http from 'node:http';
-import app from './app/index.app.js';
+import app from './app/app.js';
 import './app/helpers/env.loader.helper.js';
 import { logMoment, Logger } from './app/helpers/Logger/index.js';
 

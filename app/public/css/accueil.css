@@ -1,25 +1,34 @@
 /* MAIN -ACCUEIL- */
 
 .accueil {
-  align-items: center;
-  backdrop-filter: blur(3em);
+  backdrop-filter: blur(5em);
   border-radius: 1em;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  justify-content: center;
-  padding: 0.5em;
-  -webkit-backdrop-filter: blur(3em);
+  gap: 3em;
+  padding: 1.5em;
+  -webkit-backdrop-filter: blur(5em);
+}
+
+.accueil-h1 {
+  align-self: center;
+  background-color: whitesmoke;
+  color: royalblue;
+  padding: 0.3em;
 }
 
 .accueil-section {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
 }
 
-.accueil-section p {
+.accueil-section-article {
   text-align: center;
+}
+
+.accueil-section-h2 {
+  text-decoration: underline;
 }

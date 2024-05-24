@@ -3,7 +3,7 @@ const mainController = {
   renderHomePage(_req, res) {
     return res.render('accueil', { cssFile: 'accueil.css', pageTitle: 'Accueil' });
   },
-
+  
   renderContactPage(_req, res) {
     return res.render('contact', { cssFile: 'contact.css', pageTitle: 'Contactez-nous' });
   },
@@ -17,39 +17,7 @@ const mainController = {
   },
 
   renderVehiculesPage(_req, res) {
-    return res.render('vehicules',
-      {
-        cssFile: 'vehicules.css',
-        pageTitle: 'Véhicules',
-        
-        images: [
-          {
-            src: 'vsl01-v2.jpeg',
-            width: '100%',
-            height: '100%',
-            alt: 'VSL N°1'
-          },
-          {
-            src: 'vsl02-v2.jpeg',
-            width: '100%',
-            height: '100%',
-            alt: 'VSL N°2'
-          },
-          {
-            src: 'amb01-v2.jpeg',
-            width: '100%',
-            height: '100%',
-            alt: 'Ambulance N°1'
-          },
-          {
-            src: 'amb02-v2.jpeg',
-            width: '100%',
-            height: '100%',
-            alt: 'Ambulance N°2'
-          }
-        ]
-      }
-    );
+    return res.render('vehicules', {cssFile: 'vehicules.css', pageTitle: 'Véhicules',});
   },
 
 };

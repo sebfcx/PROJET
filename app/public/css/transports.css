@@ -11,19 +11,21 @@
   -webkit-backdrop-filter: blur(5em);
 }
 
-.transports h1 {
-  font-weight: bold;
-  text-align: center;
+.transports-h1 {
+  align-self: center;
+  background-color: whitesmoke;
+  border: solid black 0.3em;
+  color: royalblue;
+  padding: 0.3em;
 }
 
-.transports section {
-  line-height: 1.5em;
-}
-
-.transports p {
-  font-weight: bold;
-  line-height: 1.5em;
-  text-align: center;
+.transports-h2 {
   text-decoration: underline;
+}
+
+.transports-article {
+  font-weight: bold;
+  line-height: 2em;
+  text-align: center;
 }
 

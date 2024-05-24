@@ -10,5 +10,3 @@ function Slide(sens) {
 
     document.getElementById("picture").src = "images/" + slide[number]
 }
-
-//setInterval("Slide(1)", 8000)
