@@ -11,7 +11,7 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 app.use(helmet({
-    contentSecurityPolicy: false
+    contentSecurityPolicy: true
 }));
 
 app.set('view engine', 'ejs');
