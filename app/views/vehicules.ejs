@@ -1,38 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/<%= cssFile %>">
-    <link rel="stylesheet" href="/css/mediaqueries.css">
-    <title>
-      <%= pageTitle %>
-    </title>
-  </head>
-
+  <%- include('./partials/head') %>
   <body>
-    <div class="container"> 
-      <header>
-        <div class="header">
-          <img class="header-img" src="images/caduceeAmbulancier.webp" alt="Caducée Ambulancier">
-          <h1 class="header-h1">Ambulance X</h1>
-          <section class="header-section">
-            <a class="header-a" href="/login">S'identifier</a>
-            <a class="header-a" href="/signup">S'enregistrer</a>
-          </section>
-        </div>
-      </header>
-      <nav>
-        <div class="nav">
-          <a class="nav-a" href="/">Accueil</a>
-          <a class="nav-a" href="/transports">Transports</a>
-          <a class="nav-a" href="/vehicules">Véhicules</a>
-          <a class="nav-a" href="/contact">Contact</a>
-        </div>
-      </nav>
+    <div class="container">
+      <%- include('./partials/header-nav') %>
       <main>
         <div class="vehicules">
           <div class="vehicules-slide">
@@ -40,14 +11,8 @@
           </div>
         </div>
       </main>
-      <footer>
-        <div class="footer">
-          <a class="footer-a" href="/mentions">MENTIONS LÉGALES</a>
-        </div>
-      </footer>
+      <%- include('./partials/footer') %>
     </div>
-
     <script src="js/slide.js"></script>
-
   </body>
 </html>

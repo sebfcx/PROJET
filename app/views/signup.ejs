@@ -1,37 +1,41 @@
-<%- include('./partials/head') %>
-
-<%- include('./partials/header-nav') %>
-     
-<main>
-  <div class="signup">  
-    <h1>CRÉATION DE COMPTE</h1>
-    <% if (errorMessage) { %>
-      <p class="error"><%= errorMessage %></p>
-    <% } %>
-    <form class="signup-form" action="/signup" method="post">
-      <label for="firstname">
-        Prénom:
-        <input type="text" id="firstname" name="firstname" required>
-      </label>
-      <label for="lastname">
-        Nom:
-        <input type="text" id="lastname" name="lastname" required>
-      </label>
-      <label for="email">
-        Email:
-        <input type="email" id="email" name="email" required>
-      </label>
-      <label for="password">
-        Mot de passe:
-        <input type="password" id="password" name="password" required>
-      </label>
-      <label for="confirmation">
-        Confirmation:
-        <input type="password" id="confirmation" name="confirmation" required>
-      </label>
-      <input class="signup-input" type="submit" value="Valider">
-    </form>
-  </div>
-</main>
-
-<%- include('./partials/footer') %>
+<!DOCTYPE html>
+<html lang="fr">
+  <%- include('./partials/head') %>
+  <body>
+    <div class="container">
+      <%- include('./partials/header-nav') %>
+      <main>
+        <div class="signup">  
+          <h1>CRÉATION DE COMPTE</h1>
+          <% if (alertMessage) { %>
+            <p class="alert"><%= alertMessage %></p>
+          <% } %>
+          <form class="signup-form" action="/signup" method="post">
+            <label for="firstname">
+              Prénom:
+              <input type="text" id="firstname" name="firstname" required>
+            </label>
+            <label for="lastname">
+              Nom:
+              <input type="text" id="lastname" name="lastname" required>
+            </label>
+            <label for="email">
+              Email:
+              <input type="email" id="email" name="email" required>
+            </label>
+            <label for="password">
+              Mot de passe:
+              <input type="password" id="password" name="password" required>
+            </label>
+            <label for="confirmation">
+              Confirmation:
+              <input type="password" id="confirmation" name="confirmation" required>
+            </label>
+            <input class="signup-input" type="submit" value="Valider">
+          </form>
+        </div>
+      </main>
+      <%- include('./partials/footer') %>
+    </div>
+  </body>
+</html>
