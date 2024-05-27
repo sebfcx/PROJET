@@ -1,6 +1,8 @@
 import pg from 'pg';
-import './env.loader.js';
-import { Logger } from './Logger/index.js';
+import dotenv from 'dotenv';
+import { Logger } from './Logger/logger.js';
+
+dotenv.config();
 
 const client = new pg.Client(process.env.DATABASE_URL);
 

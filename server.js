@@ -3,8 +3,10 @@ import https from 'node:https';
 import path from 'path';
 import fs from 'fs';
 import app from './app/app.js';
-import './app/helpers/env.loader.js';
-import { logMoment, Logger } from './app/helpers/Logger/index.js';
+import dotenv from 'dotenv';
+import { logMoment, Logger } from './app/helpers/Logger/logger.js';
+
+dotenv.config();
 
 const sslKey = path.resolve('ssl', 'key.pem');
 const sslCert = path.resolve('ssl', 'cert.pem');

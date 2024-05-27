@@ -1,5 +1,5 @@
 import client from '../helpers/pg.driver.js';
-import { Logger } from '../helpers/Logger/index.js'
+import { Logger } from '../helpers/Logger/logger.js'
 
 const dataMapper = {
 
