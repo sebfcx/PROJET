@@ -24,10 +24,10 @@ const dataMapper = {
   async createMember(firstname, lastname, email, hashedPassword) {
     try {
       const result = await client.query(
-        'INSERT INTO "member" (firstname, lastname, email, password) VALUES ($1, $2, $3, $4) RETURNING id', 
+        'INSERT INTO "member" (firstname, lastname, email, password) VALUES ($1, $2, $3, $4)', 
         [firstname, lastname, email, hashedPassword]
       );
-      return result.rows[0].id;
+      return result.rows[0];
     
     } catch (error) {
       Logger.error('Echec de création de membre', error);
@@ -37,4 +37,6 @@ const dataMapper = {
 };
 
 export default dataMapper;
+
+
 

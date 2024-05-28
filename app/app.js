@@ -10,14 +10,24 @@ const app = express();
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(helmet({
-    contentSecurityPolicy: false
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", "'unsafe-inline'"],
+    styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+    imgSrc: ["'self'"]
+  }
 }));
 
 app.set('view engine', 'ejs');
-app.set('views', 'app/views');
+app.set('views', join(__dirname, 'views'));
 
-app.use(cors());
+const corsOptions = {
+  origin: ['*'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
