@@ -17,6 +17,6 @@
 }
 #picture {
   cursor: pointer;
-  width: 50em;
-  height: 40em;
+  width: 100%;
+  height: 100%;
 }
