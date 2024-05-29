@@ -10,14 +10,16 @@ const app = express();
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", "'unsafe-inline'"],
-    styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-    imgSrc: ["'self'"]
-  }
-}));
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+       "script-src": ["'self'", "'unsafe-inline'", "https://localhost"],
+       "script-src-attr": ["'none'", "'unsafe-inline'", "https://localhost"]
+      },
+    },
+  })
+);
 
 app.set('view engine', 'ejs');
 app.set('views', join(__dirname, 'views'));
