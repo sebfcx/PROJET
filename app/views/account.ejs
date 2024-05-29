@@ -1,14 +1,46 @@
-<%- include('./partials/head') %>
+<!DOCTYPE html>
+<html lang="fr">
+  <%- include('./partials/head') %>
+  <body>
+    <div class="container">
+      <%- include('./partials/header-nav') %>
+      <main>
+        <div class="account">
+          <section class="account-section">
+            <h2>Informations de compte</h2>
+            <label for="firstname">
+              Prénom : seb
+              <p id="infoFirstname"></p>
+            </label>
+            <label for="lastname">
+              Nom : fcx
+              <p id="infoLastname"></p>
+            </label>
+            <label for="email">
+              Courriel : sebfcx@gmail.com
+              <p id="infoEmail"></p>
+            </label>
+          </section>   
+          <form class="account-form" action="/account" method="post">
+            <h2>Modification de mot de passe</h2>
+            <label for="currentPassword">
+              Mot de passe actuel :
+              <input type="password" id="currentPassword" name="currentPassword" required>
+            </label>
+            <label for="newPassword">
+              Nouveau mot de passe
+              <input type="password" id="newPassword" name="newPassword" required>
+            </label>
+            <label for="confirmNewPassword">
+              <u>Confirmation</u>:
+              <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+            </label>
+            <input type="submit" value="Valider">
+          </form>
+        </div>
+      </main>
+      <%- include('./partials/footer') %>
+    </div>
+  </body>
 
-  <%- include('./partials/header-nav') %>
-    <main>
-      <div class="account">
-        <section class="account-section">
-          <h2>Informations sur l'utilisateur</h2>
-          <p>Nom: <span id="user-lastname">seb</span></p>
-          <p>Prénom: <span id="user-firstname">fcx</span></p>
-          <p>Email: <span id="user-email">sebfcx@gmail.com</span></p>
-        </section>
-      </div>
-    </main>
-  <%- include('./partials/footer') %> 
+</html>

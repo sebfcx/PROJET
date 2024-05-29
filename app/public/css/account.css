@@ -1,0 +1,33 @@
+/* MAIN -ACCOUNT- */
+
+.account {
+  align-items: center;
+  background-color: whitesmoke;
+  border: solid black 0.5em;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 1em;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.account-form input {
+  align-self: center;
+  font-size: 1em;
+  font-weight: bolder;
+}
+.account-form label {
+  text-decoration: underline;
+}
+
+.account-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

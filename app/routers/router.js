@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import mainController from '../controllers/mainController.js';
-import userAuthController from '../controllers/userAuthController.js';
+import memberAuthController from '../controllers/memberAuthController.js';
 
 const router = Router();
 
@@ -10,15 +10,12 @@ router.get('/mentions', mainController.renderMentionsPage);
 router.get('/transports', mainController.renderTransportsPage);
 router.get('/vehicules', mainController.renderVehiculesPage);
 
-router.route('/signup')
-.get(userAuthController.renderSignupPage)
-.post(userAuthController.handleSignupForm);
-
 router.route('/login')
-.get(userAuthController.renderLoginPage)
-.post(userAuthController.handleLoginForm);
+.get(memberAuthController.renderLoginPage)
+.post(memberAuthController.handleLoginForm);
 
-router.route('/account')
-.get(userAuthController.renderAccountPage)
+router.route('/signup')
+.get(memberAuthController.renderSignupPage)
+.post(memberAuthController.handleSignupForm);
 
 export default router;

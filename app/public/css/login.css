@@ -2,29 +2,23 @@
 
 .login {
   align-items: center;
-  background-image: url(../images/accueil-v2.jpeg);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
-.login-div {
-  align-items: center;
-  background-color: aliceblue;
-  border: solid black 0.1em;
-  border-radius: 1em;
+  background-color: whitesmoke;
+  border: solid black 0.5em;
+  border-radius: 2em;
   display: flex;
   flex-direction: column;
-  font-size: 1.7em;
-  gap: 0.5em;
-  height: 30%;
-  padding-top: 1em;
-  text-align: center;
-  width: 30%;
+  gap: 2em;
+  padding: 3em;
 }
 
-.login-div-form {
+.login-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1em;
+}
+
+.login-form button, input, textarea {
+  align-self: center;
+  font-size: 1em;
+  font-weight: bolder;
 }

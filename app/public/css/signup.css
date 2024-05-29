@@ -2,29 +2,23 @@
 
 .signup {
   align-items: center;
-  background-image: url(../images/accueil-v2.jpeg);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
-.signup-div {
-  align-items: center;
-  background-color: aliceblue;
-  border: solid black 0.1em;
-  border-radius: 1em;
+  background-color: whitesmoke;
+  border: solid black 0.5em;
+  border-radius: 2em;
   display: flex;
   flex-direction: column;
-  font-size: 1.5em;
-  gap: 0.3em;
-  height: 50%;
-  justify-content: center;
-  text-align: center;
-  width: 50%;
+  gap: 2em;
+  padding: 3em;
 }
 
-.signup-div-form {
+.signup-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1em;
+}
+
+.signup-form button, input {
+  align-self: center;
+  font-size: 1em;
+  font-weight: bolder;
 }

@@ -2,32 +2,27 @@
 
 .mentions {
   align-items: center;
-  background-image: url(../images/accueil-v2.jpeg);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
-.mentions-div {
-  color: antiquewhite;
+  color: whitesmoke;
   display: flex;
   flex-direction: column;
-  font-size: 2em;
-  gap: 2em;
-  text-align: center;
+  height: 100%;
+  gap: 1em;
+  justify-content: center;
+  width: 100%;
 }
 
-.mentions-div-h1 {
+.mentions-h1 {
   background-color: antiquewhite;
   border: solid black 0.1em;
   color: black;
   padding: 0.1em;
 }
 
-.mentions-div-section {
-  backdrop-filter: blur(1em);
+.mentions-section {
+  backdrop-filter: blur(3em);
   border-radius: 1em;
   gap: 1em;
   padding: 1em;
-  -webkit-backdrop-filter: blur(1em);
+  text-align: center;
+  -webkit-backdrop-filter: blur(3em);
 }

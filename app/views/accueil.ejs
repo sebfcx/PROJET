@@ -1,40 +1,54 @@
-<%- include('./partials/head') %>
-      
-  <%- include('./partials/header-nav') %>
-  
-    <main class="accueil">
-      <div class="accueil-div">
-        <h1 class="accueil-div-h1"><u>AMBULANCE X</u></h1>
-        <br>
-        <p class="accueil-div-p">
-          XX rue sans fin <br>
-          35400 SAINT-MALO <br>
-          Tel : 02.XX.XX.XX.XX. <br>
-        </p>
-        <br>
-        <p class="accueil-div-p">
-          Créée en 1982, notre <u>Société familiale Malouine</u> est fière d’être présente, <br>
-          au service des patients, <u>depuis plus de 40 ans.</u>
-        </p>
-        <br>
-        <h2 class="accueil-div-h2"> Notre équipe est constituée de : </h2>
-        <ul>
-          <li class="accueil-div-li">15 ambulanciers diplômés, à votre service et à votre écoute</li>
-          <li class="accueil-div-li">
-            2 assistants pour prendre vos rendez-vous <br>
-            et pour vous conseiller lors de vos démarches administratives</li>
-        </ul>
-        <br>
-        <p class="accueil-div-p">
-          La Société est membre du réseau de Transports Sanitaires Indépendants (TSI) <br>
-          pour répondre aux appels d'offres. <br>
-          (Article 80 de la Loi de Finance de la Sécurité Sociale)
-        </p>
-        <p class="accueil-div-p">
-          À titre d'exemple, nous effectuons les transferts Inter-établissements & Intra-établissements <br>
-          sur demande des hôpitaux de St-Malo, Cancale, Dinan, CHU de Rennes, Clinique de la Côte d'Émeraude...
-        </p>
-      </div>
-    </main>
-    
-  <%- include('./partials/footer') %>
+<!DOCTYPE html>
+<html lang="fr">
+  <%- include('./partials/head') %>
+  <body>
+    <div class="container">
+      <%- include('./partials/header-nav') %>
+      <main>
+        <div class="accueil">
+          <h1 class="accueil-h1">AMBULANCE X</h1>
+          <section class="accueil-section">
+            <article class="accueil-section-article">
+              XX rue sans fin <br>
+              35400 SAINT-MALO <br>
+              Tel : 02.XX.XX.XX.XX. <br>    
+            </article>
+            <article class="accueil-section-article">
+              Créée en 1982, notre <u>Société familiale Malouine</u>
+              <br>
+              est fière d’être présente, 
+              au service des patients,
+              <br>
+              <u>depuis plus de 40 ans.</u>
+            </article>
+          </section>
+          <section class="accueil-section">
+            <h2 class="accueil-section-h2">Notre équipe est constituée de :</h2>
+            <ul>
+              <li>15 ambulanciers diplômés, à votre service et à votre écoute</li>
+              <li>2 assistants pour prendre vos rendez-vous <br>
+                et pour vous conseiller lors de vos démarches administratives
+              </li>
+            </ul>
+            <article class="accueil-section-article">
+              La Société est membre du réseau 
+              de Transports Sanitaires Indépendants (TSI)
+              <br>
+              pour répondre aux appels d'offres.
+              (Article 80 de la Loi de Finance de la Sécurité Sociale)
+              <br>
+            </article> 
+            <article class="accueil-section-article">
+              À titre d'exemple, nous effectuons les transferts 
+              Inter-établissements & Intra-établissements
+              <br>
+              sur demande des hôpitaux de St-Malo, 
+              Cancale, Dinan, CHU de Rennes, Clinique de la Côte d'Émeraude..
+            </article>          
+          </section>
+        </div>
+      </main>
+      <%- include('./partials/footer') %>
+    </div>
+  </body>
+</html>

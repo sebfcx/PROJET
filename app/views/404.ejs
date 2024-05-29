@@ -1,12 +1,16 @@
-<%- include('./partials/head') %>
-
-  <%- include('./partials/header-nav') %>
-
-    <main class="Page404">
-      <div class="Page404-div">
-        <h1>Oups, tu es perdu/ue ???</h1>
-        <p>La sortie, c'est par <a href="/">là</a>!</p>
+<!DOCTYPE html>
+<html lang="fr">
+  <%- include('./partials/head') %>
+    <body>
+      <div class="container"> 
+        <%- include('./partials/header-nav') %>
+        <main>
+          <div class="Page404">
+              <h1 class="Page404-h1">Oups, tu es perdu/ue ???</h1>
+              <a class="Page404-a" href="/">La sortie, c'est par là !!!</a>
+          </div>
+        </main>
+        <%- include('./partials/footer') %>
       </div>
-    </main>
-    
-  <%- include('./partials/footer') %>
+    </body>
+</html>

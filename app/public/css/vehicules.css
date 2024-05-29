@@ -1,17 +1,22 @@
 /* MAIN -VEHICULES- */
-
 .vehicules {
-  border: solid rgb(29, 135, 228) 0.5em;
+  backdrop-filter: blur(5em);
+  -webkit-backdrop-filter: blur(5em);
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.vehicules-div {
+.vehicules-slide {
   display: flex;
-  flex-direction: row;
-  height: 75%;
+  align-items: center;
+  justify-content: center;
+  
 }
-
-.vehicules-div-img {
-  width: 50%;
+#picture {
+  cursor: pointer;
+  width: 50em;
+  height: 40em;
 }
