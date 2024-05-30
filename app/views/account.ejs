@@ -20,6 +20,14 @@
           </section>   
           <form class="account-form" action="/account" method="post">
             <h2>Modification de mot de passe</h2>
+            <% if (alertMessage) { %>
+              <p class="alert"><%= alertMessage %></p>
+            <% } %>
+            
+            <% if (successMessage) { %>
+              <p class="success"><%= successMessage %></p>
+            <% } %>
+            <input type="hidden" name="memberEmail" value="<%= member.email %>">
             <label for="currentPassword">
               Mot de passe actuel :
               <input type="password" id="currentPassword" name="currentPassword" required>
@@ -29,11 +37,13 @@
               <input type="password" id="newPassword" name="newPassword" required>
             </label>
             <label for="confirmNewPassword">
-              <u>Confirmation</u>:
+              Confirmation:
               <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
             </label>
             <input type="submit" value="Valider">
           </form>
+
+          <a href="/">Déconnexion</a>
         </div>
       </main>
       <%- include('./partials/footer') %>

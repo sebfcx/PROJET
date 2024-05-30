@@ -34,6 +34,21 @@ const dataMapper = {
       throw error;
     }
   },
+
+  async changePassword(hashedNewPassword, memberEmail) {
+    try {
+      const result = await client.query(
+        'UPDATE member SET password = $1 WHERE email = $2 RETURNING *',
+        [hashedNewPassword, memberEmail]
+      );
+      return result.rows[0];
+  
+    } catch (error) {
+      Logger.error('Echec du changement de mot de passe', error);
+      throw error;
+    }
+  },
+  
 };
 
 export default dataMapper;

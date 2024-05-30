@@ -4,7 +4,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "npx nodemon"
+    "dev": "npx nodemon",
+    "createtable": "psql -U projet -d projet -f '/Users/sebastienfaucheux/Développement/data/create_table.sql'"
   },
   "keywords": [],
   "author": "",

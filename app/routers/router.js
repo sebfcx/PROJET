@@ -10,7 +10,8 @@ router.get('/mentions', mainController.renderMentionsPage);
 router.get('/transports', mainController.renderTransportsPage);
 router.get('/vehicules', mainController.renderVehiculesPage);
 
-//router.get('/account', memberAuthController.renderAccountPage);
+router.route('/account') 
+.post(memberAuthController.changeMemberPassword);
 
 router.route('/login')
 .get(memberAuthController.renderLoginPage)
