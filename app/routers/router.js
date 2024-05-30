@@ -10,6 +10,8 @@ router.get('/mentions', mainController.renderMentionsPage);
 router.get('/transports', mainController.renderTransportsPage);
 router.get('/vehicules', mainController.renderVehiculesPage);
 
+//router.get('/account', memberAuthController.renderAccountPage);
+
 router.route('/login')
 .get(memberAuthController.renderLoginPage)
 .post(memberAuthController.handleLoginForm);
@@ -17,5 +19,6 @@ router.route('/login')
 router.route('/signup')
 .get(memberAuthController.renderSignupPage)
 .post(memberAuthController.handleSignupForm);
+
 
 export default router;

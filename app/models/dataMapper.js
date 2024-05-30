@@ -24,7 +24,7 @@ const dataMapper = {
   async createMember(firstname, lastname, email, hashedPassword) {
     try {
       const result = await client.query(
-        'INSERT INTO "member" (firstname, lastname, email, password) VALUES ($1, $2, $3, $4)', 
+        'INSERT INTO "member" (firstname, lastname, email, password) VALUES ($1, $2, $3, $4) RETURNING *', 
         [firstname, lastname, email, hashedPassword]
       );
       return result.rows[0];

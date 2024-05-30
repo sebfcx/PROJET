@@ -9,16 +9,13 @@
           <section class="account-section">
             <h2>Informations de compte</h2>
             <label for="firstname">
-              Prénom : seb
-              <p id="infoFirstname"></p>
+              <b>PRÉNOM</b> : <%= member.firstname %>
             </label>
             <label for="lastname">
-              Nom : fcx
-              <p id="infoLastname"></p>
+              <b>NOM</b> : <%= member.lastname %>
             </label>
             <label for="email">
-              Courriel : sebfcx@gmail.com
-              <p id="infoEmail"></p>
+              <b>EMAIL</b> : <%= member.email %>
             </label>
           </section>   
           <form class="account-form" action="/account" method="post">

@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import validator from 'validator';
-import dataMapper from '../models/dataMapper.js';
+import dataMapper from '../models/dataMapper.js'
 
 const memberAuthController = {
 
@@ -130,6 +130,7 @@ const memberAuthController = {
   },
 
 
+
   async handleLoginForm(req, res) {
     const { email, password } = req.body;
 
@@ -146,8 +147,7 @@ const memberAuthController = {
         successMessage: '' 
       });
     }
-
-    if (!email || !password) {
+    if (!sanitizedEmail || !sanitizedPassword) {
       return res.render('login', { 
         cssFile: 'login.css', 
         pageTitle: 'Login', 
@@ -155,33 +155,39 @@ const memberAuthController = {
         successMessage: '' 
       });
     }
+    if (!validator.isEmail(sanitizedEmail)) {
+      return res.render('login', { 
+        cssFile: 'login.css', 
+        pageTitle: 'Login', 
+        alertMessage: "Le format de l'email n'est pas valide",
+        successMessage: ''
+      });
+    }
 
     try {
-      const member = await dataMapper.findMemberByEmail(email);
-  
+      const member = await dataMapper.findMemberByEmail(sanitizedEmail);
       if (!member) {
         return res.render('login', { 
           cssFile: 'login.css', 
           pageTitle: 'Login', 
-          alertMessage: 'Mauvais couple email/password',
+          alertMessage: 'Mauvais couple email/mot de passe',
           successMessage: '' 
         });
       }
-  
-      const isMatching = await bcrypt.compare(password, member.password);
-  
+      const isMatching = await bcrypt.compare(sanitizedPassword, member.password);
       if (!isMatching) {
         return res.render('login', { 
           cssFile: 'login.css', 
           pageTitle: 'Login', 
-          alertMessage: 'Mauvais couple email/password',
+          alertMessage: 'Mauvais couple email/mot de passe',
           successMessage: ''
         });
       }
       return res.render('account', { 
-          cssFile: 'account.css', 
-          pageTitle: 'Account',
-        });
+        cssFile: 'account.css', 
+        pageTitle: 'Account',
+        member: member
+      });
 
     } catch (error) {
       return res.render('login', { 
@@ -191,9 +197,7 @@ const memberAuthController = {
         successMessage: ''
       });
     }
-
   },
-
 };
 
 export default memberAuthController;

@@ -1,4 +1,5 @@
 import express from 'express';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import helmet from 'helmet';
 import url from 'node:url';
@@ -10,15 +11,14 @@ const app = express();
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-       "script-src": ["'self'", "'unsafe-inline'", "https://localhost"],
-       "script-src-attr": ["'none'", "'unsafe-inline'", "https://localhost"]
-      },
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      "script-src": ["'self'", "'unsafe-inline'", "https://localhost"],
+      "script-src-attr": ["'none'", "'unsafe-inline'", "https://localhost"]
     },
-  })
+  },
+})
 );
 
 app.set('view engine', 'ejs');
@@ -28,10 +28,11 @@ const corsOptions = {
   origin: ['*'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
 };
-
 app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(express.static(join(__dirname, 'public')));
 
 app.use(router);
