@@ -7,9 +7,15 @@
       <main>
         <div class="signup">  
           <h1>CRÉATION DE COMPTE</h1>
+          
           <% if (alertMessage) { %>
             <p class="alert"><%= alertMessage %></p>
           <% } %>
+           
+          <% if (successMessage) { %>
+            <p class="success"><%= successMessage %></p>
+          <% } %>
+
           <form class="signup-form" action="/signup" method="post">
             <label for="firstname">
               Prénom:

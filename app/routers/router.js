@@ -1,25 +1,32 @@
 import { Router } from 'express';
 import mainController from '../controllers/mainController.js';
-import memberAuthController from '../controllers/memberAuthController.js';
+import accountPageController from '../controllers/accountPageController.js';
+import contactPageController from '../controllers/contactPageController.js';
+import loginPageController from '../controllers/loginPageController.js';
+import signupPageController from '../controllers/signupPageController.js';
 
 const router = Router();
 
 router.get('/', mainController.renderHomePage);
-router.get('/contact', mainController.renderContactPage);
 router.get('/mentions', mainController.renderMentionsPage);
 router.get('/transports', mainController.renderTransportsPage);
 router.get('/vehicules', mainController.renderVehiculesPage);
 
+
 router.route('/account') 
-.post(memberAuthController.changeMemberPassword);
+.post(accountPageController.changeMemberPassword);
+
+router.route('/contact')
+.get(contactPageController.renderContactPage)
+.post(contactPageController.sendFormContact)
 
 router.route('/login')
-.get(memberAuthController.renderLoginPage)
-.post(memberAuthController.handleLoginForm);
+.get(loginPageController.renderLoginPage)
+.post(loginPageController.handleLoginForm)
 
 router.route('/signup')
-.get(memberAuthController.renderSignupPage)
-.post(memberAuthController.handleSignupForm);
+.get(signupPageController.renderSignupPage)
+.post(signupPageController.handleSignupForm)
 
 
 export default router;

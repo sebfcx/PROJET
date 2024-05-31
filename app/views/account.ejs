@@ -21,11 +21,11 @@
           <form class="account-form" action="/account" method="post">
             <h2>Modification de mot de passe</h2>
             <% if (alertMessage) { %>
-              <p class="alert"><%= alertMessage %></p>
+              <div class="alert"><%= alertMessage %></div>
             <% } %>
             
             <% if (successMessage) { %>
-              <p class="success"><%= successMessage %></p>
+              <div class="success"><%= successMessage %></div>
             <% } %>
             <input type="hidden" name="memberEmail" value="<%= member.email %>">
             <label for="currentPassword">
