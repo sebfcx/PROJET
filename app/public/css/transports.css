@@ -6,8 +6,8 @@
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  padding: 1.5em;
+  gap: 1em;
+  padding: 1em;
   -webkit-backdrop-filter: blur(5em);
 }
 
@@ -25,7 +25,7 @@
 
 .transports-article {
   font-weight: bold;
-  line-height: 2em;
+  line-height: 1.3em;
   text-align: center;
 }
 
