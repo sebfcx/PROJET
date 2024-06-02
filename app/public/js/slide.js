@@ -8,5 +8,5 @@ function Slide(sens) {
     if(number < 0)
         number = slide.length - 1;
 
-    document.getElementById("picture").src = "images/" + slide[number]
+    document.getElementById("vehicules-slide").src = "images/" + slide[number]
 }
