@@ -4,18 +4,23 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "npx nodemon"
+    "dev": "npx nodemon",
+    "createtable": "psql -U projet -d projet -f '/Users/sebastienfaucheux/Développement/data/create_table.sql'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0",
     "pg": "^8.11.5",
     "serve-favicon": "^2.5.0",
