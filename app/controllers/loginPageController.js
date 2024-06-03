@@ -53,7 +53,7 @@ const loginPageController = {
         cssFile: 'login.css',
         mainHtml: 'login.ejs', 
         pageTitle: 'Login', 
-        alertMessage: "Le format de l'email n'est pas valide",
+        alertMessage: 'Email non valide',
         successMessage: '',
         script: ''
       });
@@ -102,9 +102,9 @@ const loginPageController = {
         mainHtml: 'account.ejs', 
         pageTitle: 'Account',
         alertMessage: '',
-        successMessage: '', 
-        member: member,
-        script: ''
+        successMessage: 'Connexion au compte réussi', 
+        script: '',
+        member: member
       },
     );
 

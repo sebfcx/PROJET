@@ -1,0 +1,146 @@
+
+############# SIGNUP #############
+
+### ERREUR / FIRSTNAME ABSENT ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "",
+    "lastname": "lasticot",
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Password",
+    "confirmation": "!8Password"
+}
+### ERREUR / LASTNAME ABSENT ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "jojo",
+    "lastname": "",
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Password",
+    "confirmation": "!8Password"
+}
+### ERREUR / EMAIL ABSENT ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "jojo",
+    "lastname": "lasticot",
+    "email": "",
+    "password": "!8Password",
+    "confirmation": "!8Password"
+}
+### ERREUR / PASSWORD ABSENT ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "jojo",
+    "lastname": "lasticot",
+    "email": "jojolasticot@gmail.com",
+    "password": "",
+    "confirmation": "!8Password"
+}
+### ERREUR / CONFIRMATION ABSENTE ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "jojo",
+    "lastname": "lasticot",
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Password",
+    "confirmation": ""
+}
+### ERREUR / ERREUR EMAIL ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "jojo",
+    "lastname": "lasticot",
+    "email": "jojolasticot@gmail",
+    "password": "!8Password",
+    "confirmation": "!8Password"
+}
+### ERREUR / PASSWORD ≠ CONFIRMATION ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "jojo",
+    "lastname": "lasticot",
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Password",
+    "confirmation": "?8Password"
+}
+
+
+
+############# LOGIN #############
+
+### ERREUR / PASSWORD###
+POST https://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Wrongpassword"
+}
+### ERREUR / EMAIL###
+POST https://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "lasticot@gmail.com",
+    "password": "!8Password"
+}
+
+############# MOT DE PASSE / ACCOUNT #############
+
+### Test de création de compte ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "jojo",
+    "lastname": "lasticot",
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Password",
+    "confirmation": "!8Password"
+}
+
+### Test de connexion réussi ###
+POST https://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Password"
+}
+
+### ERREUR de changement de mot de passe CURRENTPASSWORD ###
+POST https://localhost:3000/account/
+Content-Type: application/json
+
+{
+    "email": "jojolasticot@gmail.com",
+    "currentPassword": "!8WrongPassword",
+    "newPassword": "!8NewPassword",
+    "confirmNewPassword": "!8NewPassword"
+}
+
+### ERREUR de changement de mot de passe NEW ≠ CONFIRM ###
+POST https://localhost:3000/account/
+Content-Type: application/json
+
+{
+    "email": "jojolasticot@gmail.com",
+    "currentPassword": "!8Password",
+    "newPassword": "!8NewPassword",
+    "confirmNewPassword": "?8NewPassword"
+}

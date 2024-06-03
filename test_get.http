@@ -1,0 +1,19 @@
+### ROUTES GET ###
+
+GET https://localhost:3000/
+###
+GET https://localhost:3000/transports
+###
+GET https://localhost:3000/vehicules
+###
+GET https://localhost:3000/contact
+###
+GET https://localhost:3000/signup
+###
+GET https://localhost:3000/login
+
+###
+
+# ERREUR ROUTAGE #
+
+GET https://localhost:3000/account

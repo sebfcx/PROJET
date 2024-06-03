@@ -69,7 +69,7 @@ const signupPageController = {
         cssFile: 'signup.css',
         mainHtml: 'signup.ejs', 
         pageTitle: 'Signup', 
-        alertMessage: "Le format de l'email n'est pas valide",
+        alertMessage: 'Email non valide',
         successMessage: '',
         script: '' 
       });

@@ -16,11 +16,10 @@
     <% if (alertMessage) { %>
       <div class="alert"><%= alertMessage %></div>
     <% } %>
-    
     <% if (successMessage) { %>
       <div class="success"><%= successMessage %></div>
     <% } %>
-    <input type="hidden" name="memberEmail" value="<%= member.email %>">
+    <input type="hidden" name="email" value="<%= member.email %>">
     <label for="currentPassword">
       Mot de passe actuel :
       <input type="password" id="currentPassword" name="currentPassword" required>

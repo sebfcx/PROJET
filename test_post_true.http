@@ -1,0 +1,53 @@
+
+############# SIGNUP #############
+
+### Test de création de compte ###
+POST https://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "firstname": "jojo",
+    "lastname": "",
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Password",
+    "confirmation": "!8Password"
+}
+
+
+############# LOGIN #############
+
+### Test de connexion réussi ###
+POST https://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "jojolasticot@gmail.com",
+    "password": "!8Password"
+}
+
+
+############# FORMULAIRE DE CONTACT #############
+
+### Test d'envoi d'un formulaire de contact ###
+POST https://localhost:3000/contact
+Content-Type: application/json
+
+{
+    "lastname": "jojo",
+    "firstname": "lasticot",
+    "email": "jojolasticot@gmail.com",
+    "message": "Ce message  est un test"
+}
+
+############# MOT DE PASSE / ACCOUNT #############
+
+### Test de changment de mot de passe ###
+POST https://localhost:3000/account/
+Content-Type: application/json
+
+{
+    "email": "jojolasticot@gmail.com",
+    "currentPassword": "!8Password",
+    "newPassword": "!8NewPassword",
+    "confirmNewPassword": "!8NewPassword"
+}

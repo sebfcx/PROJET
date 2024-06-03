@@ -35,11 +35,11 @@ const dataMapper = {
     }
   },
 
-  async changePassword(hashedNewPassword, memberEmail) {
+  async changePassword(hashedNewPassword, email) {
     try {
       const result = await client.query(
         'UPDATE member SET password = $1 WHERE email = $2 RETURNING *',
-        [hashedNewPassword, memberEmail]
+        [hashedNewPassword, email]
       );
       return result.rows[0];
   
