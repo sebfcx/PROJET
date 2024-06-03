@@ -22,7 +22,6 @@ const accountPageController = {
       pageTitle: 'Account',
       alertMessage: 'Sérieusement?!', 
       successMessage: '',
-      script: '',
       member: member
       });
 

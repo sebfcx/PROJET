@@ -1,15 +1,10 @@
 <script>
-    
-const slide = document.getElementById("vehicules-slide");
+    const img = ["vsl01.webp", "vsl02.webp", "amb01.webp", "amb02.webp"];
+    let index=0
+    document.getElementById("vehicules-slide").addEventListener('click', Slide);
 
-const img = ["vsl01.webp", "vsl02.webp", "amb01.webp", "amb02.webp"];
-
-function Slide() {
-    console.log("essai")
-};
-document.getElementById("vehicules-slide").src = "/images/" + slides[index];
-
-
-slide.addEventListener('click', Slide);
-
+    function Slide() {
+        index = (index + 1) % img.length;
+        document.getElementById("vehicules-slide").src = "/images/" + img[index];
+    }
 </script>

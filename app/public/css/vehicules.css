@@ -1,6 +1,8 @@
 /* MAIN -VEHICULES- */
 
 .vehicules {
+  backdrop-filter: blur(5em);
+   -webkit-backdrop-filter: blur(5em);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +11,7 @@
 }
 
 #vehicules-slide {
+  max-height: 50em;
   max-width: 100%;
-  height: auto;
   cursor: pointer;
 }
