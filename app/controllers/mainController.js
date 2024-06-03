@@ -13,8 +13,7 @@ const mainController = {
     return res.render('index', { 
       cssFile: 'mentions.css', 
       pageTitle: 'Mentions légales',
-      mainHtml: 'mentions.ejs',
-      script: ''
+      mainHtml: 'mentions.ejs'
     });
   },
 
