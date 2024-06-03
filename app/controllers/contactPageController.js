@@ -5,11 +5,13 @@ import validator from 'validator';
 const contactPageController = {
 
   renderContactPage(_, res) {
-    return res.render('contact', { 
-      cssFile: 'contact.css', 
+    return res.render('index', { 
+      cssFile: 'contact.css',
+      mainHtml: 'contact.ejs', 
       pageTitle: 'Contact',
       alertMessage: '', 
-      successMessage: '' 
+      successMessage: '',
+      script: '' 
     });
   },
 
@@ -28,27 +30,33 @@ const contactPageController = {
       || forbiddenWords.test(sanitizedEmail) 
       || forbiddenWords.test(message)
     ) {
-      return res.render('contact', { 
-        cssFile: 'contact.css', 
+      return res.render('index', { 
+        cssFile: 'contact.css',
+        mainHtml: 'contact.ejs', 
         pageTitle: 'Contact', 
         alertMessage: 'Sérieusement?!',
-        successMessage: '' 
+        successMessage: '',
+        script: '' 
       });
     }
     if (!sanitizedFirstname || !sanitizedLastname || !sanitizedEmail || !message) {
-      return res.render('contact', { 
-        cssFile: 'contact.css', 
+      return res.render('index', { 
+        cssFile: 'contact.css',
+        mainHtml: 'contact.ejs',
         pageTitle: 'Contact', 
         alertMessage: 'Tous les champs sont obligatoires',
-        successMessage: ''  
+        successMessage: '',
+        script: ''  
       });
     }
     if (!validator.isEmail(sanitizedEmail)) {
-      return res.render('contact', { 
-        cssFile: 'contact.css', 
+      return res.render('index', { 
+        cssFile: 'contact.css',
+        mainHtml: 'contact.ejs', 
         pageTitle: 'Contact', 
         alertMessage: "Le format de l'email n'est pas valide",
-        successMessage: ''  
+        successMessage: '',
+        script: ''  
       });
     }
 
@@ -70,19 +78,23 @@ const contactPageController = {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         Logger.error("Erreur lors de l'envoi du message:", error);
-        return res.render('contact', { 
-          cssFile: 'contact.css', 
+        return res.render('index', { 
+          cssFile: 'contact.css',
+          mainHtml: 'contact.ejs', 
           pageTitle: 'Contact',
           alertMessage: "Échec de l'envoi du message", 
-          successMessage: ''
+          successMessage: '',
+          script: ''
         });
       } else {
         Logger.log('E-mail envoyé:', info.response);
-        return res.render('contact', { 
-          cssFile: 'contact.css', 
+        return res.render('index', { 
+          cssFile: 'contact.css',
+          mainHtml: 'contact.ejs',
           pageTitle: 'Contact',
           alertMessage: '', 
-          successMessage: 'Message envoyé avec succès' 
+          successMessage: 'Message envoyé avec succès',
+          script: '' 
         });
       }
     });

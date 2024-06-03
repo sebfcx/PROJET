@@ -5,11 +5,13 @@ import dataMapper from '../models/dataMapper.js'
 const signupPageController = {
 
   renderSignupPage(_, res) {
-    return res.render('signup', { 
-      cssFile: 'signup.css', 
-      pageTitle: 'Signup', 
+    return res.render('index', { 
+      cssFile: 'signup.css',
+      mainHtml: 'signup.ejs', 
+      pageTitle: 'Signup',
       alertMessage: '',
-      successMessage: '' 
+      successMessage: '',
+      script: '' 
     });
   },
   async handleSignupForm(req, res) {
@@ -30,56 +32,68 @@ const signupPageController = {
       || forbiddenWords.test(sanitizedPassword) 
       || forbiddenWords.test(sanitizedConfirmation)
     ) {
-      return res.render('signup', { 
-        cssFile: 'signup.css', 
+      return res.render('index', { 
+        cssFile: 'signup.css',
+        mainHtml: 'signup.ejs', 
         pageTitle: 'Signup', 
         alertMessage: 'Sérieusement?!',
-        successMessage: ''  
+        successMessage: '',
+        script: ''  
       });
     }
     
     if (!sanitizedFirstname || !sanitizedLastname || !sanitizedEmail || !sanitizedPassword || !sanitizedConfirmation) {
-      return res.render('signup', { 
-        cssFile: 'signup.css', 
+      return res.render('index', { 
+        cssFile: 'signup.css',
+        mainHtml: 'signup.ejs', 
         pageTitle: 'Signup', 
         alertMessage: 'Tous les champs sont obligatoires',
-        successMessage: '' 
+        successMessage: '',
+        script: '' 
       });
     }
 
     if (!validator.isAlpha(sanitizedFirstname) || !validator.isAlpha(sanitizedLastname)) {
-      return res.render('signup', { 
-        cssFile: 'signup.css', 
+      return res.render('index', { 
+        cssFile: 'signup.css',
+        mainHtml: 'signup.ejs', 
         pageTitle: 'Signup', 
         alertMessage: 'Les prénoms et noms ne doivent contenir que des lettres',
-        successMessage: ''  
+        successMessage: '',
+        script: ''  
       });
     }
 
     if (!validator.isEmail(sanitizedEmail)) {
-      return res.render('signup', { 
-        cssFile: 'signup.css', 
+      return res.render('index', { 
+        cssFile: 'signup.css',
+        mainHtml: 'signup.ejs', 
         pageTitle: 'Signup', 
         alertMessage: "Le format de l'email n'est pas valide",
-        successMessage: '' 
+        successMessage: '',
+        script: '' 
       });
     }
 
     if (!validator.isStrongPassword(sanitizedPassword)) {
-      return res.render('signup', { 
-        cssFile: 'signup.css', 
+      return res.render('index', { 
+        cssFile: 'signup.css',
+        mainHtml: 'signup.ejs', 
         pageTitle: 'Signup', 
         alertMessage: 'Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial',
-        successMessage: ''  
+        successMessage: '',
+        script: ''  
       });
     }
 
     if (sanitizedPassword !== sanitizedConfirmation) {
-      return res.render('signup', { 
-        cssFile: 'signup.css', 
+      return res.render('index', { 
+        cssFile: 'signup.css',
+        mainHtml: 'signup.ejs', 
         pageTitle: 'Signup', 
         alertMessage: 'Les mots de passes ne correspondent pas',
-        successMessage: ''  
+        successMessage: '',
+        script: ''  
       });
     }
 
@@ -88,11 +102,13 @@ const signupPageController = {
       const alreadyExistingUser = await dataMapper.findMemberByEmail(sanitizedEmail);
       
       if (alreadyExistingUser) {
-        return res.render('signup', { 
-          cssFile: 'signup.css', 
+        return res.render('index', { 
+          cssFile: 'signup.css',
+          mainHtml: 'signup.ejs', 
           pageTitle: 'Signup', 
           alertMessage: 'Membre déjà existant',
-          successMessage: '' 
+          successMessage: '',
+          script: '' 
         });
       }
   
@@ -103,28 +119,34 @@ const signupPageController = {
       const user = await dataMapper.createMember(sanitizedFirstname, sanitizedLastname, sanitizedEmail, hashedPassword);
   
       if (user) {
-        return res.render('login', {
+        return res.render('index', {
           cssFile: 'login.css',
           pageTitle: 'Login',
+          mainHtml: 'login.ejs',
           alertMessage: '',
-          successMessage: 'Inscription réalisée avec succès, vous pouvez vous connecter'
+          successMessage: 'Inscription réalisée avec succès, vous pouvez vous connecter',
+          script: ''
         });
 
       } else {
-        return res.render('signup', { 
-          cssFile: 'signup.css', 
+        return res.render('index', { 
+          cssFile: 'signup.css',
+          mainHtml: 'signup.ejs', 
           pageTitle: 'Signup', 
           alertMessage: 'Une erreur est survenue lors de la création',
-          successMessage: '' 
+          successMessage: '',
+          script: '' 
         });
       }
     
     } catch (error) {
-      return res.render('signup', { 
-        cssFile: 'signup.css', 
+      return res.render('index', { 
+        cssFile: 'signup.css',
+        mainHtml: 'signup.ejs', 
         pageTitle: 'Signup', 
         alertMessage: 'Une erreur interne est survenue',
-        successMessage: ''
+        successMessage: '',
+        script: ''
       });
     }
   },

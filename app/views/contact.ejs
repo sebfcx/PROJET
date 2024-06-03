@@ -1,57 +1,46 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <%- include('./partials/head') %>
-  <body>
-    <div class="container">
-      <%- include('./partials/header-nav') %>
-      <main>
-        <div class="contact">
-          <h1>CONTACT</h1>
-          <% if (alertMessage) { %>
-            <div class="alert"><%= alertMessage %></div>
-          <% } %>
-          
-          <% if (successMessage) { %>
-            <div class="success"><%= successMessage %></div>
-          <% } %>
-          <form class="contact-form" action="/contact" method="post">      
-            <label>
-              Nom:
-              <input type="text" name="lastname" required>
-            </label>      
-            <label>
-              Prénom:
-              <input type="text" name="firstname" required>
-            </label>      
-            <label>
-              Email:
-              <input type="email" name="email" required>
-            </label>      
-            <label>
-              Votre message:
-              <textarea name="message" required></textarea>
-            </label>      
-            <button type="submit">Envoyer</button>
-          </form>
-          <section class="contact-section">
-            <h2>LE SAVIEZ-VOUS ?</h2>
-            <p class="contact-p">
-              PAR DÉCISION MINISTÉRIELLE DU 24/04/1968,<br>
-              VOUS AVEZ LE LIBRE CHOIX DE VOTRE AMBULANCIER <br>
-              EXIGEZ-LE SURTOUT LORS DE VOS ENTRÉES ET SORTIES D'HOSPITALISATION ! <br>
-              <u><b>Pour plus de renseignements :</b></u> <br>
-              Contactez-nous en priorité au :
-              <br>
-              02.XX.XX.XX.XX
-              <br>
-              Courriel :
-              <br>
-              contact@ambulanceX.com
-            </p>
-          </section>
-        </div>
-      </main>
-      <%- include('./partials/footer') %>
-    </div>
-  </body>
-</html>
+<div class="contact">
+  <h1>CONTACT</h1>
+  <% if (alertMessage) { %>
+    <div class="alert"><%= alertMessage %></div>
+  <% } %>
+  
+  <% if (successMessage) { %>
+    <div class="success"><%= successMessage %></div>
+  <% } %>
+  <form class="contact-form" action="/contact" method="post">      
+    <label>
+      Nom:
+      <input type="text" name="lastname" required>
+    </label>      
+    <label>
+      Prénom:
+      <input type="text" name="firstname" required>
+    </label>      
+    <label>
+      Email:
+      <input type="email" name="email" required>
+    </label>      
+    <label>
+      Votre message:
+      <textarea name="message" required></textarea>
+    </label>      
+    <button type="submit">Envoyer</button>
+  </form>
+  <section class="contact-section">
+    <h2>LE SAVIEZ-VOUS ?</h2>
+    <p class="contact-p">
+      PAR DÉCISION MINISTÉRIELLE DU 24/04/1968,<br>
+      VOUS AVEZ LE LIBRE CHOIX DE VOTRE AMBULANCIER <br>
+      EXIGEZ-LE SURTOUT LORS DE VOS ENTRÉES ET SORTIES D'HOSPITALISATION ! <br>
+      <u><b>Pour plus de renseignements :</b></u> <br>
+      Contactez-nous en priorité au :
+      <br>
+      02.XX.XX.XX.XX
+      <br>
+      Courriel :
+      <br>
+      contact@ambulanceX.com
+    </p>
+  </section>
+</div>
+      

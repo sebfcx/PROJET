@@ -7,11 +7,13 @@ const maxAttempts = process.env.MAX_ATTEMPTS;
 const loginPageController = {
 
   renderLoginPage(_, res) {
-    return res.render('login', { 
-      cssFile: 'login.css', 
+    return res.render('index', { 
+      cssFile: 'login.css',
+      mainHtml: 'login.ejs', 
       pageTitle: 'Login',
       alertMessage: '', 
-      successMessage: ''
+      successMessage: '',
+      script: ''
     });
   },
 
@@ -27,27 +29,33 @@ const loginPageController = {
       forbiddenWords.test(sanitizedEmail) 
       || forbiddenWords.test(sanitizedPassword)
     ) {
-      return res.render('login', { 
-        cssFile: 'login.css', 
+      return res.render('index', { 
+        cssFile: 'login.css',
+        mainHtml: 'login.ejs', 
         pageTitle: 'Login', 
         alertMessage: 'Sérieusement?!',
-        successMessage: '' 
+        successMessage: '',
+        script: '' 
       });
     }
     if (!sanitizedEmail || !sanitizedPassword) {
-      return res.render('login', { 
-        cssFile: 'login.css', 
+      return res.render('index', { 
+        cssFile: 'login.css',
+        mainHtml: 'login.ejs', 
         pageTitle: 'Login', 
         alertMessage: 'Tous les champs sont obligatoires',
-        successMessage: '' 
+        successMessage: '',
+        script: '' 
       });
     }
     if (!validator.isEmail(sanitizedEmail)) {
-      return res.render('login', { 
-        cssFile: 'login.css', 
+      return res.render('index', { 
+        cssFile: 'login.css',
+        mainHtml: 'login.ejs', 
         pageTitle: 'Login', 
         alertMessage: "Le format de l'email n'est pas valide",
-        successMessage: ''
+        successMessage: '',
+        script: ''
       });
     }
 
@@ -55,49 +63,59 @@ const loginPageController = {
       req.session.loginAttempts = 0;
     }
     if (req.session.attempts >= maxAttempts) {
-      return res.render('login', {
+      return res.render('index', {
         cssFile: 'login.css',
+        mainHtml: 'login.ejs',
         pageTitle: 'Login',
         alertMessage: 'Trop de tentatives de connexion, veuillez réessayer ultérieurement.',
-        successMessage: ''
+        successMessage: '',
+        script: ''
       });
     }
 
     try {
       const member = await dataMapper.findMemberByEmail(sanitizedEmail);
       if (!member) {
-        return res.render('login', { 
-          cssFile: 'login.css', 
+        return res.render('index', { 
+          cssFile: 'login.css',
+          mainHtml: 'login.ejs', 
           pageTitle: 'Login', 
           alertMessage: 'Mauvais couple email/mot de passe',
-          successMessage: '' 
+          successMessage: '',
+          script: '' 
         });
       }
       const isMatching = await bcrypt.compare(sanitizedPassword, member.password);
       if (!isMatching) {
-        return res.render('login', { 
-          cssFile: 'login.css', 
+        return res.render('index', { 
+          cssFile: 'login.css',
+          mainHtml: 'login.ejs', 
           pageTitle: 'Login', 
           alertMessage: 'Mauvais couple email/mot de passe',
-          successMessage: ''
+          successMessage: '',
+          script: ''
         });
       }
       
-      return res.render('account', { 
-        cssFile: 'account.css', 
+      return res.render('index', { 
+        cssFile: 'account.css',
+        mainHtml: 'account.ejs', 
         pageTitle: 'Account',
         alertMessage: '',
         successMessage: '', 
-        member: member
+        member: member,
+        script: ''
       },
     );
 
     } catch (error) {
-      return res.render('login', { 
-        cssFile: 'login.css', 
+      return res.render('index', { 
+        cssFile: 'login.css',
+        mainHtml: 'login.ejs', 
         pageTitle: 'Login', 
         alertMessage: 'Une erreur interne est survenue',
-        successMessage: ''
+        successMessage: '',
+        script: ''
       });
     }
   },

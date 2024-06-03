@@ -1,12 +1,12 @@
-const slide = ["vsl01.webp", "vsl02.webp", "amb01.webp", "amb02.webp"]
-let number = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = ["vsl01.webp", "vsl02.webp", "amb01.webp", "amb02.webp"];
+    
+    let index = 0;
 
-function Slide(sens) {
-    number = number + sens;
-    if(number > slide.length - 1)
-        number = 0
-    if(number < 0)
-        number = slide.length - 1;
+    function Slide() {
+        index = (index + 1) % slides.length;
+        document.getElementById("vehicules-slide").src = "/images/" + slides[index];
+    }
 
-    document.getElementById("vehicules-slide").src = "images/" + slide[number]
-}
+    document.getElementById("vehicules-slide").addEventListener('click', Slide);
+});

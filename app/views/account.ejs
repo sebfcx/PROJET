@@ -1,53 +1,39 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <%- include('./partials/head') %>
-  <body>
-    <div class="container">
-      <%- include('./partials/header-nav') %>
-      <main>
-        <div class="account">
-          <section class="account-section">
-            <h2>Informations de compte</h2>
-            <label for="firstname">
-              <b>PRÉNOM</b> : <%= member.firstname %>
-            </label>
-            <label for="lastname">
-              <b>NOM</b> : <%= member.lastname %>
-            </label>
-            <label for="email">
-              <b>EMAIL</b> : <%= member.email %>
-            </label>
-          </section>   
-          <form class="account-form" action="/account" method="post">
-            <h2>Modification de mot de passe</h2>
-            <% if (alertMessage) { %>
-              <div class="alert"><%= alertMessage %></div>
-            <% } %>
-            
-            <% if (successMessage) { %>
-              <div class="success"><%= successMessage %></div>
-            <% } %>
-            <input type="hidden" name="memberEmail" value="<%= member.email %>">
-            <label for="currentPassword">
-              Mot de passe actuel :
-              <input type="password" id="currentPassword" name="currentPassword" required>
-            </label>
-            <label for="newPassword">
-              Nouveau mot de passe
-              <input type="password" id="newPassword" name="newPassword" required>
-            </label>
-            <label for="confirmNewPassword">
-              Confirmation:
-              <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
-            </label>
-            <input type="submit" value="Valider">
-          </form>
-
-          <a href="/">Déconnexion</a>
-        </div>
-      </main>
-      <%- include('./partials/footer') %>
-    </div>
-  </body>
-
-</html>
+<div class="account">
+  <section class="account-section">
+    <h2>Informations de compte</h2>
+    <label for="firstname">
+      <b>PRÉNOM</b> : <%= member.firstname %>
+    </label>
+    <label for="lastname">
+      <b>NOM</b> : <%= member.lastname %>
+    </label>
+    <label for="email">
+      <b>EMAIL</b> : <%= member.email %>
+    </label>
+  </section>   
+  <form class="account-form" action="/account" method="post">
+    <h2>Modification de mot de passe</h2>
+    <% if (alertMessage) { %>
+      <div class="alert"><%= alertMessage %></div>
+    <% } %>
+    
+    <% if (successMessage) { %>
+      <div class="success"><%= successMessage %></div>
+    <% } %>
+    <input type="hidden" name="memberEmail" value="<%= member.email %>">
+    <label for="currentPassword">
+      Mot de passe actuel :
+      <input type="password" id="currentPassword" name="currentPassword" required>
+    </label>
+    <label for="newPassword">
+      Nouveau mot de passe
+      <input type="password" id="newPassword" name="newPassword" required>
+    </label>
+    <label for="confirmNewPassword">
+      Confirmation:
+      <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+    </label>
+    <input type="submit" value="Valider">
+  </form>
+  <a href="/">Déconnexion</a>
+</div>

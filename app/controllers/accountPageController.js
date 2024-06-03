@@ -3,16 +3,16 @@ import validator from 'validator';
 import dataMapper from '../models/dataMapper.js'
 
 const accountPageContoller = {
-
   renderAccountPage(_, res) {
-    return res.render('account', { 
-      cssFile: 'account.css', 
+    return res.render('index', { 
+      cssFile: 'account.css',
+      mainHtml: 'account.ejs', 
       pageTitle: 'Account',
       alertMessage: '', 
-      successMessage: ''
+      successMessage: '',
+      script: ''
     });
   },
-
   async changeMemberPassword(req, res) {
     const { memberEmail, currentPassword, newPassword, confirmNewPassword } = req.body;
 
@@ -26,37 +26,45 @@ const accountPageContoller = {
       || forbiddenWords.test(sanitizedNewPassword) 
       || forbiddenWords.test(sanitizedConfirmNewPassword)
     )
-      return res.render('account', { 
-        cssFile: 'account.css', 
-        pageTitle: 'Account', 
-        alertMessage: 'Sérieusement?!',
-        successMessage: '' 
+    return res.render('index', { 
+      cssFile: 'account.css',
+      mainHtml: 'account.ejs', 
+      pageTitle: 'Account',
+      alertMessage: '', 
+      successMessage: '',
+      script: ''
       });
 
   
     if (!currentPassword || !sanitizedNewPassword || !sanitizedConfirmNewPassword)
-      return res.render('account', { 
-        cssFile: 'account.css', 
+      return res.render('index', { 
+        cssFile: 'account.css',
+        mainHtml: 'account.ejs', 
         pageTitle: 'Account', 
         alertMessage: 'Tous les champs sont obligatoires',
-        successMessage: ''
+        successMessage: '',
+        script: ''
       });
       
     if (sanitizedNewPassword !== sanitizedConfirmNewPassword) {
-      return res.render('account', { 
-        cssFile: 'account.css', 
+      return res.render('index', { 
+        cssFile: 'account.css',
+        mainHtml: 'account.ejs', 
         pageTitle: 'Account', 
         alertMessage: 'Les mots de passes ne correspondent pas',
-        successMessage: '' 
+        successMessage: '',
+        script: '' 
       });
     }
 
     if (!validator.isStrongPassword(sanitizedNewPassword)) {
-      return res.render('account', { 
-        cssFile: 'account.css', 
+      return res.render('index', { 
+        cssFile: 'account.css',
+        mainHtml: 'account.ejs', 
         pageTitle: 'Account', 
         alertMessage: 'Le mot de passe doit contenir > 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial',
-        successMessage: ''
+        successMessage: '',
+        script: ''
       });
     }
 
@@ -66,28 +74,34 @@ const accountPageContoller = {
     try {
       const changeMemberPassword = await dataMapper.changePassword(hashedNewPassword, memberEmail);
       if (!changeMemberPassword) {
-        return res.render('account', { 
-          cssFile: 'account.css', 
+        return res.render('index', { 
+          cssFile: 'account.css',
+          mainHtml: 'account.ejs', 
           pageTitle: 'Account', 
           alertMessage: 'Echec du changement de mot de passe',
-          successMessage: '' 
+          successMessage: '',
+          script: ''
         }
       )}
 
-      return res.render('account', {
-        cssFile: 'account.css', 
+      return res.render('index', {
+        cssFile: 'account.css',
+        mainHtml: 'account.ejs', 
         pageTitle: 'Account', 
         alertMessage: '',
         successMessage: 'Changement de mot de passe effectué',
+        script: '',
         member: changeMemberPassword
       });
 
     } catch (error) {
-      return res.render('account', { 
-        cssFile: 'account.css', 
+      return res.render('index', { 
+        cssFile: 'account.css',
+        mainHtml: 'account.ejs', 
         pageTitle: 'Account', 
         alertMessage: 'Une erreur interne est survenue',
-        successMessage: ''
+        successMessage: '',
+        script: ''
       });
     }
   },
