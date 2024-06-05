@@ -107,9 +107,9 @@ POST https://localhost:3000/signup
 Content-Type: application/json
 
 {
-    "firstname": "jojo",
-    "lastname": "lasticot",
-    "email": "jojolasticot@gmail.com",
+    "firstname": "to",
+    "lastname": "to",
+    "email": "toto@gmail.com",
     "password": "!8Password",
     "confirmation": "!8Password"
 }
@@ -119,7 +119,7 @@ POST https://localhost:3000/login
 Content-Type: application/json
 
 {
-    "email": "jojolasticot@gmail.com",
+    "email": "toto@gmail.com",
     "password": "!8Password"
 }
 
@@ -128,7 +128,7 @@ POST https://localhost:3000/account/
 Content-Type: application/json
 
 {
-    "email": "jojolasticot@gmail.com",
+    "email": "toto@gmail.com",
     "currentPassword": "!8WrongPassword",
     "newPassword": "!8NewPassword",
     "confirmNewPassword": "!8NewPassword"
@@ -139,7 +139,7 @@ POST https://localhost:3000/account/
 Content-Type: application/json
 
 {
-    "email": "jojolasticot@gmail.com",
+    "email": "toto@gmail.com",
     "currentPassword": "!8Password",
     "newPassword": "!8NewPassword",
     "confirmNewPassword": "?8NewPassword"

@@ -12,16 +12,12 @@
     </title>
   </head>
   <body>
-    <div class="container">
-      
-      <%- include('./partials/header-nav') %>
-      
+    <div class="container">    
+      <%- include('./partials/header-nav') %>      
       <main>
         <%- include (mainHtml) %>
       </main>
-
       <%- include('./partials/footer') %>
-
     </div>
     <% if (cssFile === 'vehicules.css') {%>
     <%- include('slide.ejs') %>

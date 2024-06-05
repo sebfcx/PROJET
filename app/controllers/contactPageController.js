@@ -3,27 +3,13 @@ import { Logger } from '../helpers/Logger/logger.js';
 import validator from 'validator';
 
 const contactPageController = {
-
-  renderContactPage(_, res) {
-    return res.render('index', { 
-      cssFile: 'contact.css',
-      mainHtml: 'contact.ejs', 
-      pageTitle: 'Contact',
-      alertMessage: '', 
-      successMessage: '',
-      script: '' 
-    });
-  },
-
+  
   sendFormContact(req, res) {
     const { lastname, firstname, email, message } = req.body;
-
     const sanitizedFirstname = validator.escape(validator.trim(lastname));
     const sanitizedLastname = validator.escape(validator.trim(firstname));
     const sanitizedEmail = validator.escape(validator.trim(email));
-
     const forbiddenWords = /(insert|drop|update|select|delete|create|alter)/i
-
     if (
       forbiddenWords.test(sanitizedFirstname) 
       || forbiddenWords.test(sanitizedLastname)
@@ -67,14 +53,12 @@ const contactPageController = {
         pass: process.env.EMAIL_PASSWORD
       }
     });
-
     const mailOptions = {
       from: process.env.EMAIL,
       to: 'sebastienfaucheux@icloud.com',
       subject: 'Nouveau message depuis le formulaire de contact',
       text: `Nom: ${sanitizedLastname}\nPrénom: ${sanitizedFirstname}\nEmail: ${sanitizedEmail}\nMessage: ${message}`
     };
-
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         Logger.error("Erreur lors de l'envoi du message:", error);
@@ -86,7 +70,7 @@ const contactPageController = {
           successMessage: '',
           script: ''
         });
-      } else {
+      } {
         Logger.log('E-mail envoyé:', info.response);
         return res.render('index', { 
           cssFile: 'contact.css',
@@ -100,6 +84,5 @@ const contactPageController = {
     });
   },
 };
-
 
 export default contactPageController;

@@ -23,9 +23,7 @@ const accountPageController = {
       alertMessage: 'Sérieusement?!', 
       successMessage: '',
       member: member
-      });
-
-  
+      });  
     if (!currentPassword || !sanitizedNewPassword || !sanitizedConfirmNewPassword)
       return res.render('index', { 
         cssFile: 'account.css',
@@ -35,8 +33,7 @@ const accountPageController = {
         successMessage: '',
         script: '',
         member: member
-      });
-      
+      });    
     if (sanitizedNewPassword !== sanitizedConfirmNewPassword) {
       return res.render('index', { 
         cssFile: 'account.css',
@@ -48,7 +45,6 @@ const accountPageController = {
         member: member
       });
     }
-
     if (!validator.isStrongPassword(sanitizedNewPassword)) {
       return res.render('index', { 
         cssFile: 'account.css',
@@ -60,14 +56,10 @@ const accountPageController = {
         member: member
       });
     }
-
     const salt = await bcrypt.genSalt(10);
     const hashedNewPassword = await bcrypt.hash(sanitizedNewPassword, salt);
-
-    try {
-      
-      const isMatching = await bcrypt.compare(currentPassword, member.password);
-      
+    try {      
+      const isMatching = await bcrypt.compare(currentPassword, member.password);      
       if (!isMatching) {
         return res.render('index', { 
           cssFile: 'account.css',
@@ -112,7 +104,6 @@ const accountPageController = {
       });
     }
   },
-
 };
 
 export default accountPageController;

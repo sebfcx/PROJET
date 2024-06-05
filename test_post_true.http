@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
     "firstname": "jojo",
-    "lastname": "",
+    "lastname": "lasticot",
     "email": "jojolasticot@gmail.com",
     "password": "!8Password",
     "confirmation": "!8Password"
@@ -50,4 +50,15 @@ Content-Type: application/json
     "currentPassword": "!8Password",
     "newPassword": "!8NewPassword",
     "confirmNewPassword": "!8NewPassword"
+}
+
+### Retour au mot de passe initial ###
+POST https://localhost:3000/account/
+Content-Type: application/json
+
+{
+    "email": "jojolasticot@gmail.com",
+    "currentPassword": "!8NewPassword",
+    "newPassword": "!8Password",
+    "confirmNewPassword": "!8Password"
 }

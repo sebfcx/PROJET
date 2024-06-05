@@ -11,22 +11,20 @@ router.get('/', mainController.renderHomePage);
 router.get('/mentions', mainController.renderMentionsPage);
 router.get('/transports', mainController.renderTransportsPage);
 router.get('/vehicules', mainController.renderVehiculesPage);
-
+router.get('/contact', mainController.renderContactPage);
+router.get('/login', mainController.renderLoginPage);
+router.get('/signup', mainController.renderSignupPage);
 
 router.route('/account') 
 .post(accountPageController.changeMemberPassword);
 
 router.route('/contact')
-.get(contactPageController.renderContactPage)
 .post(contactPageController.sendFormContact)
 
 router.route('/login')
-.get(loginPageController.renderLoginPage)
 .post(loginPageController.handleLoginForm)
 
 router.route('/signup')
-.get(signupPageController.renderSignupPage)
 .post(signupPageController.handleSignupForm)
-
 
 export default router;
